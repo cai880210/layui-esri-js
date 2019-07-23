@@ -5,6 +5,9 @@ layui 是一款采用自身模块规范编写的情怀型前端UI框架，遵循
 
 如果这个有兴趣的朋友可以认真地研究下这个项目，从项目的配置开始，我从多个方面尝试了将各个开源的插件集成进去，包括一些网上鲜少有人尝试的jquery插件兼容引用（网上各种dojoconfig兼容jquery数不胜数，但是jquery的一些插件就很少人说明怎么兼容）
 
+
+
+layui esri arcgis js jquery jquery plugin
 ## 快速上手
 
 ## [阅读文档]

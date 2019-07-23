@@ -1,0 +1,33 @@
+<div class="onemapMyLegend">
+  <div class="ovwContainer" dojoattachpoint="_body" style="width: 400px; height: 300px;">
+			<div id="expandbutton" class="expand_div_zs"  style="z-index: 2; "></div>
+		    <table >
+		       <tr>
+		       <td style="width: 30px;">
+		       <!-- begin moreleng  btn-group -->
+		       <div class="btn-group"  id="morelayerGroup">
+	                <i  class="ace-icon glyphicon glyphicon-align-justify  blue bigger" data-toggle="dropdown" class="dropdown-toggle" style="padding-top: 0px;padding-left: 0px;z-index: 1;cursor:pointer;"></i>
+					<ul class="dropdown-menu" id="moreLayers" style="max-height:160px;overflow:auto;">
+					</ul>
+		       </div><!-- /.btn-group -->
+		       </td>
+		       <td id="td_legendframe" style="text-align: center;">
+		       		<!--<iframe id="legendframe"    frameborder="0" src="layerLegend.jsp" width="340px;" height="25px;"></iframe>-->
+		       	<td>
+		       </tr>
+		    </table>
+			<div id="legendContent" style="display: none;" >
+				<div class="tabbable tabs-left"  >
+					<ul class="nav nav-tabs" id="myLegends"  >
+					</ul>
+					<div  id="layerLegDiv" class="tab-content" style="padding: 5px 12px;height: 155px;"></div>
+				</div>
+    </div>
+  </div>
+	<div  class="expand_div_zs"  style="z-index: 2; " ></div>
+  <div class="ovwButton ovwController" title="隐藏图例" dojoattachpoint="_controllerDiv" dojoattachevent="onclick: _visibilityHandler">
+  </div>
+  <div class="ovwButton ovwMaximizer" title="最大化" dojoattachpoint="_maximizerDiv" dojoattachevent="onclick: _maximizeHandler">
+  </div>
+</div>
+	  

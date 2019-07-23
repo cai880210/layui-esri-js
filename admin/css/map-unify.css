@@ -1,0 +1,270 @@
+/*
+* @Author: phr
+* @Date:   2019-06-25 11:50:17
+*/
+#map {
+    position: absolute;
+	margin: 0;
+	padding: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 0;
+    background: #1caea0;
+    background: linear-gradient(to top, #81ede3, #009688);
+    box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.3);
+}
+.container {
+	max-width:100%;
+}
+.toolsbar {
+    position: absolute;
+    right: 20px;
+    top: 100px;
+    z-index: 12;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+}
+.toolsbar .layui-nav .layui-nav-item{
+	line-height: 40px;
+}
+.toolsbar .layui-tab-content{
+	padding: 0;
+}
+.toolsbar .layui-tab-title li {
+	min-width: 30px;
+}
+.toolsbar .layui-nav-child {
+	top:45px;
+}
+.toolsbar .layui-nav-child dd {
+    border-bottom: 1px solid #cccccc;
+}
+.map .esriMapContainer{
+	float: left;
+}
+.esriSimpleSlider{
+	border: 1px solid #999 !important;
+}
+.esriSimpleSliderVertical .esriSimpleSliderIncrementButton{
+	border-bottom: 1px solid #999 !important;
+}
+.esriSimpleSliderTL {
+    top: 70px !important;
+    left: 20px !important;;
+}
+.tools-warp{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+		width: 350px;
+    padding: 0;
+    background: #fff;
+    box-shadow: 0px 2px 10px 0px rgba(236, 236, 236, 1);
+    z-index: 9;
+}
+.tools-warp a{
+	color: #333 !important;
+}
+.tools-warp .layui-nav-item{
+	line-height: 40px !important;
+}
+.tools-warp .layui-nav-child{
+	top: 40px !important;
+}
+.tools-warp .iconfont{
+	margin-right: 5px;
+}
+.tools-warp>.layui-tab-title{
+	height: auto;
+}
+.tools-warp>.layui-tab-content{
+	padding: 0px;
+}
+.tools-warp .layui-tab-title li:first-child i,.tools-warp .layui-tab-title li:nth-child(2) i{
+	display: none;
+}
+.layui-nav .layui-nav-more {
+    border-top-color: rgba(69, 65, 65, 0.7);
+}
+.layui-nav .layui-nav-mored,.layui-nav-itemed>a .layui-nav-more {
+    border-color: transparent transparent #3d3a3a
+}
+/*
+ * 信息面板样式
+ */
+.esriPopup .titlePane, .claro .dijitDialogTitleBar {
+    background-color: #5d6dc3;
+    background: linear-gradient(to top, #5d6dc3, #3c86d8);
+    color: #fff;
+    line-height: 40px !important;
+    font-size: 14px;
+    border: none !important;
+}
+.esriPopup .titleButton.maximize {
+    display: none;
+}
+.com-item,.cont-btns{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	cursor: pointer;
+}
+.com-item li{
+	display: inline-block;
+	width: 49%;
+	overflow: hidden;
+	color: #999;
+}
+.com-item li span{
+	display: inline-block;
+	margin-left: 5px;
+	width: 95px;
+	color: #333;
+}
+.cont-btns li{
+	display: inline-block;
+	margin-right: 10px;
+}
+.cont-btns li .mdi{
+	margin-right: 5px;
+}
+.cont-btns{
+	padding-top: 7px;
+    margin-top: 10px;
+    border-top: 1px solid #f2f2f2;
+}
+/*
+ * 图层——搜索条件
+ */
+.x-admin-backlog .x-admin-backlog-body {
+	padding: 5px 10px;
+}
+.x-admin-backlog-body p cite {
+	font-size: 18px;
+}
+
+/*
+ * 工具栏
+ */
+.measure-warp,.draw-warp,.graphic-search,.compare-warp,.graphic-search{
+	position:absolute;
+	/*top:60px;
+	right: 20px;*/
+	border-top: 1px solid #f2f2f2;
+	z-index: 1;
+}
+.measure-warp .layui-nav,.draw-warp .layui-nav,.compare-warp .layui-nav,.graphic-search .layui-nav{
+	width: 350px;
+	padding: 0 !important;
+	background: #fff !important;
+}
+.measure-warp .layui-nav .layui-nav-item,.draw-warp .layui-nav .layui-nav-item,.compare-warp .layui-nav .layui-nav-item,.graphic-search .layui-nav .layui-nav-item{
+	line-height: 46px !important;
+}
+.measure-warp .layui-nav .layui-nav-item a,.draw-warp .layui-nav .layui-nav-item a,.compare-warp .layui-nav .layui-nav-item a,.graphic-search .layui-nav .layui-nav-item a{
+	color: #333 !important;
+}
+.basemap-btn{
+	position: absolute;
+	top: 80px;
+	left:60px;
+	z-index: 20;
+	background-color:white;
+	cursor: pointer;
+	border: 2px solid #fff;
+}
+.myBaseMap-warp{
+	position:absolute;
+	top: 124px;
+    left: 60px;
+	padding: 10px 5px 0 0;
+	display: none;
+	background: #fff;
+	z-index: 9;
+}
+.layers-warp{
+	z-index: 9;
+	position:absolute;
+	/*top: 60px;
+    right: 20px;*/
+    width: 350px;
+	background:white;
+	/*display: none;*/
+}
+.layers-item>ul>li{
+	margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f2f2f2;
+}
+.layers-item li:last-child{
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+.layers-item li a{
+	font-size: 12px;
+}
+.layers-item li .layui-form-switch{
+	position: absolute;
+	right: 15px;
+}
+.legend-warp{
+	position: fixed;
+    bottom: 15px;
+    left: 15px;
+	background:white;
+	z-index: 21;
+}
+#legendDiv{
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	width:20px;
+	height:20px;
+	border-top: 2px solid #4F81E8; 
+	border-right: 2px solid #4F81E8;
+	border-bottom: 2px solid #4F81E8;
+	border-left: 1px solid #cccccc; 
+	z-index: 99;
+	background-color: #fff;
+}
+.myLegends li{
+	margin-bottom: 5px;
+    padding: 5px 0;
+    border-bottom: 1px solid #f2f2f2;
+    text-align: center;
+}
+.myLegends li.active{
+	border-bottom: 1px solid #0000FF;
+}
+.myLegends{
+	display: block;
+	float:left;
+}
+#layerLegDiv{
+	padding: 5px 12px;
+	height: 155px;
+	float: left;
+	width:280px;
+	border-left: 1px solid #f2f2f2;
+}
+.expand_div_zs{
+	z-index: 2;
+}
+.mapScale-warp{
+	position: absolute;
+	bottom: 15px;
+	left:50px;
+	z-index: 20;
+	background:white;
+}
+
+/************************
+ * 加载弹窗
+ */
+.claro .xadmin-loading{
+	padding-top:25px;
+}

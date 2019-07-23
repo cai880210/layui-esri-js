@@ -1,0 +1,312 @@
+<!doctype html>
+<html class="x-admin-sm">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>智慧水土保持信息管理云平台</title>
+		<meta name="renderer" content="webkit|ie-comp|ie-stand">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+		<link rel="stylesheet" href="./css/xadmin.css">
+		<link rel="stylesheet" href="./css/font.css">
+		<link rel="stylesheet" href="./css/login.css">
+		<link rel="stylesheet" href="./css/new_login.css">
+		<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+		<script src="./lib/layui/layui.js" charset="utf-8"></script>
+		<!--[if lt IE 9]>
+      <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+      <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	</head>
+
+	<body class="login-bg">
+
+		<div class="login layui-anim layui-anim-up" lay-filter="example3">
+			<div class="user-login-header">
+				<hr class="hr60">
+				<h2>天地一体化</h2>
+				<hr class="hr15">
+				<h3>水土保持监管系统</h3>
+			</div>
+			<hr class="hr60">
+			<div>
+				<input id="LoginName" name="username" placeholder="用户名" type="text" lay-verify="required" class="layui-input">
+				<hr class="hr15">
+				<input id="LoginPwd" name="password" lay-verify="required" placeholder="密码" type="password" class="layui-input">
+				<hr class="hr15">
+				<div class="layui-form-item" style="margin-bottom: 20px;">
+					<a id="register" data-method="offset" data-type="auto" class="user-jump-change1 layui-link" style="margin-top: 7px;">注册账号</a>
+					<a id="forget" data-method="offset1" data-type="auto" class="user-jump-change layui-link" style="margin-top: 7px;">忘记密码？</a>
+				</div>
+				<button lay-filter="Login" id="loginBtn" class="layui-btn layui-btn-radius layui-btn-normal">登录</button>
+			</div>
+		</div>
+		<script>
+			$(function() {
+				$("#loginBtn").click(function() {
+//					var loginName = $("#LoginName").val();
+//					var loginPwd = $("#LoginPwd").val();
+//					console.log(loginName);
+					var token = 1;
+					$.ajax({
+						type: "POST",
+						dataType:"json",
+						url: "http://192.168.110.91:8080/base/projectInfo/findProjectInfoListByPage",
+						data: {
+//							username: loginName,
+//							password: loginPwd
+						},
+						beforeSend:   function(xhr) {        
+							xhr.setRequestHeader("appId",  "0");    
+							xhr.setRequestHeader("clientType",  "2");    
+						},
+						success: function(data) {
+							console.log(data);
+							// data = JSON.parse(data);
+//							if(data.code == 200){
+//								//登录成功
+//								window.setTimeout(function(){
+//									window.location.href = "index.html";
+//								},500);
+//								
+//							}
+//							else{
+//								layer.msg('登录失败');
+//							}
+						}
+
+					});
+				})
+			})
+
+			layui.use('layer', function() {
+				var $ = layui.jquery,
+					layer = layui.layer;
+
+				//触发事件
+				var active = {
+					offset: function(othis) {
+						var type = othis.data('type');
+						var text = othis.text();
+
+						layer.open({
+							type: 1,
+							title: false,
+							offset: type,
+							id: 'register' + type,
+							content: $("#register1"),
+							btnAlign: 'c', //按钮居中
+							shade: 0, //不显示遮罩
+							yes: function() {
+								layer.closeAll();
+							}
+						});
+					},
+					offset1: function(othis) {
+						var type = othis.data('type');
+						var text = othis.text();
+
+						layer.open({
+							type: 1,
+							title: false,
+							offset: type,
+							id: 'forget' + type,
+							content: $("#forget1"),
+							btnAlign: 'c', //按钮居中
+							shade: 0, //不显示遮罩
+							yes: function() {
+								layer.closeAll();
+							}
+						});
+					}
+				}
+
+				$('#register').on('click', function() {
+					var othis = $(this);
+					var method = othis.data('method');
+					active[method] ? active[method].call(this, othis) : '';
+				});
+
+				$('#forget').on('click', function() {
+					var othis = $(this);
+					var method = othis.data('method');
+					active[method] ? active[method].call(this, othis) : '';
+				});
+			});
+
+			//注册成功提示框
+			function sucessresiter() {
+				alert("注册成功！");
+			}
+
+			//密码修改成功提示框
+			function sucessupdate() {
+				alert("修改成功！");
+			}
+		</script>
+		<!-- 底部结束 -->
+
+	</body>
+
+	<div id="forget1" class="enroll1">
+		<form class="layui-form" action="" lay-filter="example">
+			<div class="layui-form-item">
+				<label class="new-user">帐号</label>
+				<div class="layui-input-block">
+					<input type="text" name="username" lay-verify="title" autocomplete="off" class="input-user">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="new-password">新密码</label>
+				<div class="layui-input-block">
+					<input type="newpassword" name="newpassword" autocomplete="off" class="input-password">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="new-name">手机号</label>
+				<div class="layui-input-block">
+					<input type="tel" name="phone" autocomplete="off" class="input-name">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="new-name">验证码</label>
+				<div class="layui-input-block">
+					<input type="text" name="securitycode" autocomplete="off" class="input-code">
+				</div>
+
+				<div class="security-code">
+					<a href="forget.html" class="user-jump-change layui-link" style="margin-top: 7px;">获取验证码</a>
+				</div>
+			</div>
+
+			<div class="new-submit">
+				<div class="layui-form-item">
+					<div class="layui-input-block">
+						<button id="submit" class="layui-btn1 layui-btn-normal1 layui-btn-radius1" onclick="sucessupdate()">提交</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<div id="register1" class="enroll">
+
+		<form class="layui-form" action="" lay-filter="example2">
+			<div class="layui-form-item">
+				<label class="new-user">帐号</label>
+				<div class="layui-input-block">
+					<input type="text" name="username" lay-verify="title" autocomplete="off" class="input-user">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="new-password">密码</label>
+				<div class="layui-input-block">
+					<input type="password" name="password" autocomplete="off" class="input-password">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="new-name">姓名</label>
+				<div class="layui-input-block">
+					<input type="text" name="usersname" autocomplete="off" class="input-name">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="new-sex">性别</label>
+				<div class="sex-bandg">
+					<input type="radio" name="sex" value="男" title="男" checked="">
+					<input type="radio" name="sex" value="女" title="女">
+				</div>
+			</div>
+
+			<div class="layui-form-item">
+				<label class="new-choses">地区</label>
+				<!--<div class="layui-input-inline">-->
+				<div class="choses-bandg">
+					<div class="select1">
+						<select name="quiz1">
+							<!--<option value="">请选择省</option>-->
+							<option value="浙江" selected="" style="font-size: 3px;">福建省</option>
+							<option value="江西">江西省</option>
+							<option value="浙江">浙江省</option>
+						</select>
+					</div>
+
+					<div class="select1">
+						<!--<div class="layui-input-inline">-->
+						<select name="quiz2">
+							<!--<option value="">请选择市</option>-->
+							<option value="厦门">厦门市</option>
+							<option value="泉州" disabled="">泉州市</option>
+							<option value="三明">三明市</option>
+							<option value="福州">福州市</option>
+							<option value="漳州">漳州市</option>
+						</select>
+						<!--</div>-->
+					</div>
+
+					<div class="select1">
+						<!--<div class="layui-input-inline">-->
+						<select name="quiz3">
+							<!--<option value="">请选择县/区</option>-->
+							<option value="思明区">思明区</option>
+							<option value="湖里区">湖里区</option>
+							<option value="集美区">集美区</option>
+						</select>
+						<!--</div>-->
+					</div>
+				</div>
+				<!--</div>-->
+
+				<div class="layui-form-item">
+					<label class="new-chose">单位</label>
+					<div class="chose-bandg">
+						<!--<div class="layui-input-block">-->
+						<select name="interest" lay-filter="aihao">
+							<option value="0" selected="">厦门市思明区水利局</option>
+							<option value="1">厦门市思明区水利局</option>
+							<option value="2">游戏</option>
+							<option value="3">音乐</option>
+							<option value="4">旅行</option>
+						</select>
+						<!--</div>-->
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<label class="new-name">手机号</label>
+					<div class="layui-input-block">
+						<input type="tel" name="phone" autocomplete="off" class="input-name">
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<label class="new-name">验证码</label>
+					<div class="layui-input-block">
+						<input type="text" name="securitycode" autocomplete="off" class="input-code">
+					</div>
+
+					<div class="security-code">
+						<a href="forget.html" class="user-jump-change layui-link" style="margin-top: 7px;">获取验证码</a>
+					</div>
+				</div>
+
+				<div class="new-submit">
+					<div class="layui-form-item">
+						<div class="layui-input-block">
+							<button id="submit2" class="layui-btn1 layui-btn-normal1 layui-btn-radius1" onclick="sucessresiter()">提交申请</button>
+						</div>
+					</div>
+				</div>
+
+		</form>
+
+		</div>
+
+</html>

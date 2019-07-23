@@ -1,0 +1,181 @@
+
+    		<style>
+    			html,body{
+    				height: 100%;
+    			}
+    			.layui-fluid{
+    				padding: 0;
+    			}
+    			.layui-tab{
+    				margin: 0;
+    			}
+    			.toolsbar {
+					    position: absolute;
+					    right: 15px;
+					    top: 60px;
+					    z-index: 12;
+					    background: #fff;
+					    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+					}
+					.toolsbar .layui-nav{
+						border-radius: 0;
+					}
+					.toolsbar .layui-nav .layui-nav-item{
+						line-height: 30px;
+					}
+					
+      .nav>.layui-tab-title>li{
+            display: block;
+        }
+      .nav>.layui-tab-title{
+            float: left;
+            width: 100px;
+        }
+      .nav>.layui-tab-content{
+            float: left;
+            width: 500px;
+            padding: 0;
+				}
+    		</style>
+    	<!--
+        	作者：jinming_cai@163.com
+        	时间：2019-06-05
+        	描述：选项卡开始——添加项目
+        -->
+<div class="nav layui-tab layui-tab-brief" lay-filter="">
+  <ul class="layui-tab-title">
+    <li class="layui-this">项目基本信息</li>
+    <li>措施核查</li>
+    <li>申请人信息</li>
+  </ul>
+  <div class="layui-tab-content" style="height: 100px;">
+    <div class="layui-tab-item layui-show">
+    	  <div class="layui-fluid">
+            <div class="layui-row">
+            	<!--
+                	作者：jinming_cai@163.com
+                	时间：2019-06-10
+                	描述：基本信息——子选项卡
+                -->
+							<div class="layui-tab layui-tab-brief" lay-filter="">
+							  <ul class="layui-tab-title">
+							    <li class="layui-this">基本属性</li>
+							    <li>图形属性</li>
+							  </ul>
+							  <div class="layui-tab-content" style="height: 100px;">
+							    <div class="layui-tab-item layui-show">
+    	                <form class="layui-form">
+										    <div class="layui-form-item">
+										      <label for="username" class="layui-form-label">
+		                            <span class="x-red">*</span>用户名</label>
+										      <div class="layui-input-inline">
+										          <input type="text" name="username" value="{{ d.product.username || '' }}" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+										        
+										      </div>
+										    </div>
+										    <div class="layui-form-item">
+										      <label class="layui-form-label"><span class="x-red">*</span>城市</label></label>
+										      <div class="layui-input-inline">
+										          <input type="text" name="city" value="{{ d.product.email || '' }}" lay-verify="required" placeholder="城市" autocomplete="off" class="layui-input">
+										        
+										      </div>
+										    </div>
+		                    <div class="layui-form-item">
+		                        <label for="username" class="layui-form-label">
+		                            <span class="x-red">*</span>收货人</label>
+		                        <div class="layui-input-inline">
+		                            <input type="text" required="" lay-verify="required" autocomplete="off" class="layui-input"></div>
+		                    </div>
+		                    <div class="layui-form-item">
+		                    	<label for="sex" class="layui-form-label">性别</label>
+												  <div class="layui-input-inline">
+										        <script type="text/html" template>
+										          <!--<select name="label" lay-verify="required">										            
+										            <option value="女" {{ d.sex === '女' ? 'selected' : '' }}>女</option>
+										            <option value="男" {{ d.sex === '男' ? 'selected' : '' }}>男</option>
+										          </select>-->
+										        </script>
+										      </div>
+									      </div>
+		                    <div class="layui-form-item">
+		                        <label for="phone" class="layui-form-label">
+		                            <span class="x-red">*</span>手机</label>
+		                        <div class="layui-input-inline">
+		                            <input type="text" id="phone" name="phone" required="" lay-verify="phone" autocomplete="off" class="layui-input"></div>
+		                    </div>
+		                    <div class="layui-form-item">
+		                        <label for="username" class="layui-form-label">
+		                            <span class="x-red">*</span>配送物流</label>
+		                        <div class="layui-input-inline">
+		                            <select id="shipping" name="shipping" class="valid">
+		                                <option value="shentong">申通物流</option>
+		                                <option value="shunfeng">顺丰物流</option></select>
+		                        </div>
+		                    </div>
+		                    <div class="layui-form-item">
+		                        <label for="username" class="layui-form-label">
+		                            <span class="x-red">*</span>支付方式</label>
+		                        <div class="layui-input-inline">
+		                            <select name="contrller">
+		                                <option>支付方式</option>
+		                                <option>支付宝</option>
+		                                <option>微信</option>
+		                                <option>货到付款</option></select>
+		                        </div>
+		                    </div>
+		                    <div class="layui-form-item">
+		                        <label for="L_email" class="layui-form-label">
+		                            <span class="x-red">*</span>发票抬头</label>
+		                        <div class="layui-input-inline">
+		                            <input type="text" id="L_email" name="email" required="" lay-verify="email" autocomplete="off" class="layui-input"></div>
+		                        <div class="layui-form-mid layui-word-aux">
+		                            <span class="x-red">*</span>
+		                        </div>
+		                    </div>
+								        <div class="layui-form-item">
+								            <label for="L_repass" class="layui-form-label"></label>
+								            <button class="layui-btn" lay-filter="add" lay-submit="">增加</button></div>
+				        		</form>
+							    </div>
+							    <div class="layui-tab-item">
+									  <div id="map-add">		            			
+		            		</div>
+		            		<div class="toolsbar">
+											<ul class="layui-nav layui-bg-green">
+											  <li class="layui-nav-item"><a href="">新增</a></li>
+											  <li class="layui-nav-item">
+											    <a href="javascript:;">编辑</a>
+											  </li>
+											  <li class="layui-nav-item"><a href="">导入</a></li>
+											  <span class="layui-nav-bar" style="left: 396px; top: 55px; width: 0px; opacity: 0;"></span>
+											</ul>												
+										</div>
+							    </div>
+							  </div>
+							</div>
+
+		        </div>
+        </div>
+    </div>
+    <div class="layui-tab-item">
+    	  <div class="layui-fluid">
+            <div class="layui-row">
+
+
+            </div>
+    	  </div>
+    </div>
+    <div class="layui-tab-item">
+    	  <div class="layui-fluid">
+            <div class="layui-row">
+<li>申请人信息</li>
+            </div>
+    	  </div>
+    </div>
+  </div>
+</div> 
+<!--
+	作者：jinming_cai@163.com
+	时间：2019-06-05
+	描述：选项卡结束
+-->

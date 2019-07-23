@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html class="x-admin-sm">
+    
+    <head>
+        <meta charset="UTF-8">
+        <title>欢迎页面-X-admin2.2</title>
+        <base target="_blank" href="http://127.0.0.1:8020/front_end_frame/admin/" /> 
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="./css/font.css">
+        <link rel="stylesheet" href="./css/xadmin.css">
+			  <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/3.20/dijit/themes/tundra/tundra.css"/> 
+			  <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/3.20/esri/css/esri.css" />
+			  <link rel="stylesheet" href="https://js.arcgis.com/3.20/dijit/themes/claro/claro.css" />
+        <script type="text/javascript" src="./lib/layui/layui.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./js/xadmin.js"></script>
+        <script type="text/javascript" src="../libs/jquery-1.10.1.js"></script>
+        <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+        <!--[if lt IE 9]>
+            <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+            <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    		<style>
+    			html,body{
+    				height: 100%;
+    			}
+    			.layui-fluid{
+    				padding: 0;
+    			}
+    			.layui-tab{
+    				margin: 0;
+    			}
+    			.toolsbar {
+					    position: absolute;
+					    right: 15px;
+					    top: 60px;
+					    z-index: 12;
+					    background: #fff;
+					    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+					}
+					.toolsbar .layui-nav{
+						border-radius: 0;
+					}
+					.toolsbar .layui-nav .layui-nav-item{
+						line-height: 30px;
+					}
+					
+      .nav>.layui-tab-title>li{
+            display: block;
+        }
+      .nav>.layui-tab-title{
+            float: left;
+            width: 100px;
+        }
+      .nav>.layui-tab-content{
+            float: left;
+            width: 500px;
+            padding: 0;
+				}
+    		</style>
+    </head>    
+    <body>
+    	<!--
+        	作者：jinming_cai@163.com
+        	时间：2019-06-05
+        	描述：选项卡开始——添加项目
+        -->
+<div class="nav layui-tab layui-tab-brief" lay-filter="">
+  <ul class="layui-tab-title">
+    <li class="layui-this">图斑基本信息</li>
+  </ul>
+  <div class="layui-tab-content" style="height: 100px;">
+    <div class="layui-tab-item layui-show">
+    	  <div class="layui-fluid">
+            <div class="layui-row">
+            	<!--
+                	作者：jinming_cai@163.com
+                	时间：2019-06-10
+                	描述：基本信息——子选项卡
+                -->
+							<div class="layui-tab layui-tab-brief" lay-filter="">
+							  <ul class="layui-tab-title">
+							    <li class="layui-this">基本属性</li>
+							  </ul>
+							  <div class="layui-tab-content" style="height: 100px;">
+							    <div class="layui-tab-item layui-show">
+    	                <form class="layui-form">
+										    <div class="layui-form-item">
+										    	<div class="layui-inline">
+											      <label for="username" class="layui-form-label">图斑编号</label>
+												    <div class="layui-input-block">
+											           <label>{{d.product.qdnm}}</label>
+											      </div>
+											    </div>
+										    	<div class="layui-inline">
+											      <label for="username" class="layui-form-label"> 扰动图斑类型</label>
+												    <div class="layui-input-block">
+											           <label>{{d.product.qtype}}</label>
+											      </div>
+											    </div>
+											    <div class="layui-inline">
+											      <label for="username" class="layui-form-label"> 扰动面积</label>
+												    <div class="layui-input-block">
+											           <label>{{d.product.qarea}}</label>
+											      </div>
+											    </div>
+										    </div>
+										    <div class="layui-form-item">
+										    	<div class="layui-inline">
+											      <label for="username" class="layui-form-label"> 扰动原因</label>
+												    <div class="layui-input-block">
+											           <label>{{d.product.rdyy}}</label>
+											      </div>
+											    </div>
+										    	<div class="layui-inline">
+											      <label for="username" class="layui-form-label"> 扰动变化类型</label>
+												    <div class="layui-input-block">
+											           <label>{{d.product.qdtype}}</label>
+											      </div>
+											    </div>
+											    <div class="layui-inline">
+											      <label for="username" class="layui-form-label"> 扰动合规性</label>
+												    <div class="layui-input-block">
+											           <label>{{d.product.byd}}</label>
+											      </div>
+											    </div>
+										    </div>
+		                    <div class="layui-form-item">
+		                      <div class="layui-inline">
+											      <label for="username" class="layui-form-label"> 复核状态</label>
+												    <div class="layui-input-block">
+											           <label>{{d.product.rst}}</label>
+											      </div>
+											    </div>
+										    	<div class="layui-inline">
+											      <label for="username" class="layui-form-label">导航位置纬度</label>
+												    <div class="layui-input-block">
+											           <label>{{d.product.wd_dh}}</label>
+											      </div>
+											    </div>
+											    <div class="layui-inline">
+											      <label for="username" class="layui-form-label"> 导航位置经度</label>
+												    <div class="layui-input-block">
+											           <label>{{d.product.jd_dh}}</label>
+											      </div>
+											    </div>
+		                    </div>
+		                    <div class="layui-form-item">
+										    	<div class="layui-inline">
+											      <label for="username" class="layui-form-label"> 复核次数</label>
+												    <div class="layui-input-block">
+											           <label>{{d.product.fhcs}}</label>
+											      </div>
+											    </div>
+										    	<div class="layui-inline">
+											      <label for="username" class="layui-form-label"> 采集时间</label>
+												    <div class="layui-input-block">
+											           <label>{{d.product.cjsj}}</label>
+											      </div>
+											    </div>
+									      </div>
+				        		</form>
+							    </div>
+							  </div>
+							</div>
+		        </div>
+        </div>
+    </div>
+  </div>
+</div> 
+<!--
+	作者：jinming_cai@163.com
+	时间：2019-06-05
+	描述：选项卡结束
+-->
+        <script>
+        	var uidPr = 11;
+	        layui.config({
+				    base: "../dist/"
+				  }).extend({
+				    index: "ext/index"
+				  }).use(["index", "table","laydate", "form"], function(){
+				    var $ = layui.$
+				    ,form = layui.form
+				    ,table = layui.table;
+		        var laydate = layui.laydate;
+						
+
+				  });
+
+				</script>
+    </body>
+
+</html>

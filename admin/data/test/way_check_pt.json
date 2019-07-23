@@ -1,0 +1,122 @@
+{
+	"feature": {
+		"geometry": {
+			"x": 118.10686491499996,
+			"y": 24.554392006
+		},
+		"attributes": {
+			"OBJECTID": 1,
+			"ID": " ",
+			"UID_PR": " ",
+			"UID_CSHC": " "
+		},
+		"project":{
+			"ISWT":"是"
+		}
+	},
+	"feature": {
+		"geometry": {
+			"x": 118.107264665,
+			"y": 24.55451573800002
+		},
+		"attributes": {
+			"OBJECTID": 2,
+			"ID": " ",
+			"UID_PR": " ",
+			"UID_CSHC": " "
+		},
+		"project":{
+			"ISWT":"是"
+		}
+	},
+	"feature": {
+		"geometry": {
+			"x": 118.10790236000003,
+			"y": 24.553478293000012
+		},
+		"attributes": {
+			"OBJECTID": 3,
+			"ID": " ",
+			"UID_PR": " ",
+			"UID_CSHC": " "
+		},
+		"project":{
+			"ISWT":"是"
+		}
+	},
+	"feature": {
+		"geometry": {
+			"x": 118.107217075,
+			"y": 24.554325381000012
+		},
+		"attributes": {
+			"OBJECTID": 4,
+			"ID": " ",
+			"UID_PR": " ",
+			"UID_CSHC": " "
+		},
+		"project":{
+			"ISWT":"是"
+		}
+	},
+	"feature": {
+		"geometry": {
+			"x": 118.07684265499995,
+			"y": 24.617052183999988
+		},
+		"attributes": {
+			"OBJECTID": 5,
+			"ID": " ",
+			"UID_PR": " ",
+			"UID_CSHC": " "
+		},
+		"project":{
+			"ISWT":"是"
+		}
+	},
+	"feature": {
+		"geometry": {
+			"x": 118.07608122700003,
+			"y": 24.617213987000014
+		},
+		"attributes": {
+			"OBJECTID": 6,
+			"ID": " ",
+			"UID_PR": " ",
+			"UID_CSHC": " "
+		},
+		"project":{
+			"ISWT":"是"
+		}
+	},
+	"feature": {
+		"geometry": {
+			"x": 118.07655711899997,
+			"y": 24.616880863000006
+		},
+		"attributes": {
+			"OBJECTID": 7,
+			"ID": " ",
+			"UID_PR": " ",
+			"UID_CSHC": " "
+		},
+		"project":{
+			"ISWT":"是"
+		}
+	},
+	"feature": {
+		"geometry": {
+			"x": 118.076652298,
+			"y": 24.616776166000022
+		},
+		"attributes": {
+			"OBJECTID": 8,
+			"ID": " ",
+			"UID_PR": " ",
+			"UID_CSHC": " "
+		},
+		"project":{
+			"ISWT":"是"
+		}
+	}
+}

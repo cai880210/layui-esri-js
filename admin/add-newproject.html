@@ -1,0 +1,286 @@
+<!doctype html>
+<html class="x-admin-sm">
+    <head>
+        <meta charset="UTF-8">
+        <title>新增项目</title>
+        <meta name="renderer" content="webkit|ie-comp|ie-stand">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+        <link rel="stylesheet" href="./css/font.css">
+        <link rel="stylesheet" href="./css/xadmin.css">
+        <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
+		<!-- 引入样式 -->
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<!-- 引入组件库 -->
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    </head>
+    <body>
+    <div id="app">
+        <template>
+		  	<el-tabs :tab-position="tabPosition" style="height: auto;">
+			    <el-tab-pane label="基本信息">
+					<template>
+					  <el-tabs :tab-position1="tabPosition1" style="height: auto;">
+					    <el-tab-pane label="基本属性">
+					    	<el-form :inline="true" :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+							  
+							  <el-form-item label="项目名称" prop="name">
+							    <el-input v-model="ruleForm.name"></el-input>
+							  </el-form-item>
+							  
+							  <el-form-item label="所属行业" prop="region">
+							    <el-select v-model="ruleForm.region" placeholder="请选择活动区域">
+							      <el-option label="区域一" value="shanghai"></el-option>
+							      <el-option label="区域二" value="beijing"></el-option>
+							    </el-select>
+							  </el-form-item>
+							  
+							  <el-form-item label="项目性质" prop="region">
+							    <el-select v-model="ruleForm.region" placeholder="请选择活动区域">
+							      <el-option label="区域一" value="shanghai"></el-option>
+							      <el-option label="区域二" value="beijing"></el-option>
+							    </el-select>
+							  </el-form-item>
+							  
+							  <el-form-item label="项目类型" prop="region">
+							    <el-select v-model="ruleForm.region" placeholder="请选择活动区域">
+							      <el-option label="区域一" value="shanghai"></el-option>
+							      <el-option label="区域二" value="beijing"></el-option>
+							    </el-select>
+							  </el-form-item>
+							  
+							  <el-form-item label="工程总投资" prop="name">
+							    <el-input v-model="ruleForm.name"></el-input>
+							  </el-form-item>
+					    	
+							  <el-form-item label="土建投资" prop="name">
+							    <el-input v-model="ruleForm.name"></el-input>
+							  </el-form-item>
+							  
+							  <el-form-item label="建设地点" prop="name">
+							    <el-input v-model="ruleForm.name"></el-input>
+							  </el-form-item>
+					    	
+							  <el-form-item label="涉及区域" prop="name">
+							    <el-input v-model="ruleForm.name"></el-input>
+							  </el-form-item>
+					    	
+							  <el-form-item label="项目规模" prop="name">
+							    <el-input v-model="ruleForm.name"></el-input>
+							  </el-form-item>
+							  
+							  <el-form-item label="计划开工时间" required>
+							      <el-form-item prop="date1">
+							        <el-date-picker type="date" placeholder="选择日期" v-model="ruleForm.date1" style="width: 100%;"></el-date-picker>
+							      </el-form-item>
+							  </el-form-item>
+							  
+							  <el-form-item label="计划完工时间" required>
+							      <el-form-item prop="date1">
+							        <el-date-picker type="date" placeholder="选择日期" v-model="ruleForm.date1" style="width: 100%;"></el-date-picker>
+							      </el-form-item>
+							  </el-form-item>
+							  
+							  <el-form-item label="防治责任面积" prop="name">
+							    <el-input v-model="ruleForm.name"></el-input>
+							  </el-form-item>
+					    	
+							  <el-form-item label="设计水平年" prop="name">
+							    <el-input v-model="ruleForm.name"></el-input>
+							  </el-form-item>
+							  
+							  <el-form-item label="占地面积" prop="name">
+							    <el-input v-model="ruleForm.name"></el-input>
+							  </el-form-item>
+					    	
+							  <el-form-item label="方案审批部门代码" prop="name">
+							    <el-input v-model="ruleForm.name"></el-input>
+							  </el-form-item>
+							  
+							  <el-form-item label="方案审批部门" prop="region">
+							    <el-select v-model="ruleForm.region" placeholder="请选择活动区域">
+							      <el-option label="区域一" value="shanghai"></el-option>
+							      <el-option label="区域二" value="beijing"></el-option>
+							    </el-select>
+							  </el-form-item>
+							  
+							  <el-form-item label="方案审批部门级别" prop="region">
+							    <el-select v-model="ruleForm.region" placeholder="请选择活动区域">
+							      <el-option label="区域一" value="shanghai"></el-option>
+							      <el-option label="区域二" value="beijing"></el-option>
+							    </el-select>
+							  </el-form-item>
+					    	
+							  <el-form-item label="发改委项目编码" prop="name">
+							    <el-input v-model="ruleForm.name"></el-input>
+							  </el-form-item>
+							  
+							  <el-form-item label="北纬" prop="name">
+							    <el-input v-model="ruleForm.name"></el-input>
+							  </el-form-item>
+					    	
+							  <el-form-item label="东经" prop="name">
+							    <el-input v-model="ruleForm.name"></el-input>
+							  </el-form-item>
+					    	
+							  <el-form-item label="项目地址" prop="name">
+							    <el-input v-model="ruleForm.name"></el-input>
+							  </el-form-item>
+							  
+							  <el-form-item label="建设状态" prop="region">
+							    <el-select v-model="ruleForm.region" placeholder="请选择活动区域">
+							      <el-option label="区域一" value="shanghai"></el-option>
+							      <el-option label="区域二" value="beijing"></el-option>
+							    </el-select>
+							  </el-form-item>
+							  
+							  <el-form-item label="实际开工时间" required>
+							      <el-form-item prop="date1">
+							        <el-date-picker type="date" placeholder="选择日期" v-model="ruleForm.date1" style="width: 100%;"></el-date-picker>
+							      </el-form-item>
+							  </el-form-item>
+							  
+							  <el-form-item label="预计竣工时间" required>
+							      <el-form-item prop="date1">
+							        <el-date-picker type="date" placeholder="选择日期" v-model="ruleForm.date1" style="width: 100%;"></el-date-picker>
+							      </el-form-item>
+							  </el-form-item>
+					    	
+							  <el-form-item label="施工方联系人" prop="name">
+							    <el-input v-model="ruleForm.name"></el-input>
+							  </el-form-item>
+					    	
+							  <el-form-item label="施工方联系人电话" prop="name">
+							    <el-input v-model="ruleForm.name"></el-input>
+							  </el-form-item>
+					    	
+							  <el-form-item label="建设单位联系人" prop="name">
+							    <el-input v-model="ruleForm.name"></el-input>
+							  </el-form-item>
+					    	
+							  <el-form-item label="建设单位联系人电话" prop="name">
+							    <el-input v-model="ruleForm.name"></el-input>
+							  </el-form-item>
+							  
+							  <el-form-item>
+							    <el-button type="primary" @click="submitForm('ruleForm')">立即创建</el-button>
+							    <el-button @click="resetForm('ruleForm')">重置</el-button>
+							  </el-form-item>
+							</el-form>
+					    	
+					    </el-tab-pane>
+					    <el-tab-pane label="空间属性">地图</el-tab-pane>
+					    <el-tab-pane label="建设单位">
+					    	<el-form :inline="true" :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+							  
+							  <el-form-item label="建设单位" prop="name">
+							    <el-input v-model="ruleForm.name"></el-input>
+							  </el-form-item>
+							  
+							  <el-form-item label="建设单位地址" prop="name">
+							    <el-input v-model="ruleForm.name"></el-input>
+							  </el-form-item>
+					    	
+							  <el-form-item label="建设单位邮编" prop="name">
+							    <el-input v-model="ruleForm.name"></el-input>
+							  </el-form-item>
+							  
+							  <el-form-item label="法定代表人" prop="name">
+							    <el-input v-model="ruleForm.name"></el-input>
+							  </el-form-item>
+					    	
+							  <el-form-item label="项目联系人" prop="name">
+							    <el-input v-model="ruleForm.name"></el-input>
+							  </el-form-item>
+					    	
+							  <el-form-item label="项目联系人电话" prop="name">
+							    <el-input v-model="ruleForm.name"></el-input>
+							  </el-form-item>
+							  
+							  <el-form-item label="项目联系人邮箱" prop="name">
+							    <el-input v-model="ruleForm.name"></el-input>
+							  </el-form-item>
+							  
+							  <el-form-item>
+							    <el-button type="primary" @click="submitForm('ruleForm')">立即创建</el-button>
+							    <el-button @click="resetForm('ruleForm')">重置</el-button>
+							  </el-form-item>
+							</el-form>
+					    	
+					    </el-tab-pane>
+					  </el-tabs>
+					</template>	
+			    </el-tab-pane>
+			    <el-tab-pane label="方案特性">配置管理</el-tab-pane>
+			    <el-tab-pane label="方案批复">配置管理</el-tab-pane>
+			    <el-tab-pane label="技术评审">配置管理</el-tab-pane>
+		  	</el-tabs>
+		</template>
+	</div>
+	<script>
+		var Main = {
+		    data() {
+		      return {
+		        tabPosition: 'left',
+		        tabPosition1: 'top',
+		        ruleForm: {
+		          name: '',
+		          region: '',
+		          date1: '',
+		          date2: '',
+		          delivery: false,
+		          type: [],
+		          resource: '',
+		          desc: ''
+		        },
+		        rules: {
+		          name: [
+		            { required: true, message: '请输入活动名称', trigger: 'blur' },
+		            { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
+		          ],
+		          region: [
+		            { required: true, message: '请选择活动区域', trigger: 'change' }
+		          ],
+		          date1: [
+		            { type: 'date', required: true, message: '请选择日期', trigger: 'change' }
+		          ],
+		          date2: [
+		            { type: 'date', required: true, message: '请选择时间', trigger: 'change' }
+		          ],
+		          type: [
+		            { type: 'array', required: true, message: '请至少选择一个活动性质', trigger: 'change' }
+		          ],
+		          resource: [
+		            { required: true, message: '请选择活动资源', trigger: 'change' }
+		          ],
+		          desc: [
+		            { required: true, message: '请填写活动形式', trigger: 'blur' }
+		          ]
+		        }
+		      };
+		    },
+		    methods: {
+		      submitForm(formName) {
+		        this.$refs[formName].validate((valid) => {
+		          if (valid) {
+		            alert('submit!');
+		          } else {
+		            console.log('error submit!!');
+		            return false;
+		          }
+		        });
+		      },
+		      resetForm(formName) {
+		        this.$refs[formName].resetFields();
+		      }
+		    }
+		  }
+		var Ctor = Vue.extend(Main)
+		new Ctor().$mount('#app')
+		
+	</script>
+    </body>
+</html>

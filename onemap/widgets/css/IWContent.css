@@ -1,0 +1,45 @@
+.cont-btns{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	cursor: pointer;
+}
+.cont-btns li{
+	display: inline-block;
+	margin-right: 10px;
+}
+.cont-btns li .mdi{
+	margin-right: 5px;
+}
+.cont-btns{
+	padding-top: 7px;
+    margin-top: 10px;
+    border-top: 1px solid #f2f2f2;
+}
+.esriPopup .sizer {
+    width: 350px !important;
+}
+.cont-btns li{
+	display: inline-block;
+	margin-right: 10px;
+}
+.cont-btns li .mdi{
+	margin-right: 5px;
+}
+.cont-btns li .mdi-eye{
+	color: #3D85D9;
+}
+.cont-btns li .mdi-file{
+	color: #0ED9C6;
+}
+.cont-btns li .mdi-close{
+	color: #FF4081;
+}
+.cont-btns{
+	padding-top: 7px;
+    margin-top: 10px;
+    border-top: 1px solid #f2f2f2;
+}
+.titlePane .title{
+	padding-left: 15px;
+}

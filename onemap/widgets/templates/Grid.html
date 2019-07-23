@@ -1,0 +1,36 @@
+<div class="jimu-widget-use-jquery">
+  <div class="cont-box select-patrol" style="display:none;" dojoAttachPoint ="dataListBox">
+		<div  dojoAttachPoint="_listHtml"></div>
+		<!--分页样式-->
+		<nav>
+	        <ul id="${id}Paging" class="pagination pagination-split">
+		        	<li class="page-item">
+		      	      <span aria-hidden="true">|&lt;</span>
+		              <span class="sr-only">First</span>            
+		            </li>
+		            <li class="page-item">
+		      	      <span aria-hidden="true">&lt;&lt;</span>
+		              <span class="sr-only">Prev</span>            
+		            </li>
+		            <li class="page-item">#n</li>
+		            <li class="page-item">#n</li>
+		            <li class="page-item">#c</li>
+		            <li class="page-item">           
+		            	<span aria-hidden="true">&gt;&gt;</span>
+		              <span class="sr-only">Next</span>
+		            </li>
+		            <li class="page-item">           
+		            	<span aria-hidden="true">&gt;|</span>
+		              <span class="sr-only">Last</span>
+		            </li>
+	        </ul>
+	    </nav>
+	    <!--end 分页样式-->    
+  </div>
+  <div class="no-searchlist" dojoAttachPoint = "NoSearchlist" style="display:none;">
+  	<h3>
+  		目前没有数据！
+  	</h3>
+  </div>
+</div>
+

@@ -1,0 +1,24 @@
+<div class="MyOverviewMap layui-nav">
+  <div class="ovwContainer" dojoattachpoint="_body">
+		<div class="tabbable tabs-left ovwbar" >
+			<ul class="nav nav-tabs layui-nav">
+				<li class="layui-nav-item" dojoattachpoint="_doubleScreen" >
+					<a data-toggle="tab" class="nav_a" title="两屏"><i class="fa fa-columns"></i><span>两屏</span></a>
+				</li>
+				<li class="layui-nav-item" dojoattachpoint="_tripleScreen" >
+					<a data-toggle="tab" class="nav_a" title="三屏"><i class="fa fa-th-list"></i><span>三屏</span></a>
+				</li>
+				<li class="layui-nav-item" dojoattachpoint="_EscScreen">
+					<a data-toggle="tab" class="nav_a" title="退出多屏"><i class="fa fa-power-off"></i><span>退出多屏</span></a>
+				</li>
+			</ul>
+		</div>
+		<div class="ovwMapcontainer" dojoattachpoint="_ovMapContainer">
+			
+		</div>
+  </div>
+  <div class="ovwButton ovwController" style="display:none" title="隐藏分屏" dojoattachpoint="_controllerDiv" dojoattachevent="onclick: _visibilityHandler">
+  </div>
+
+</div>
+	  

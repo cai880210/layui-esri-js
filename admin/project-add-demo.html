@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html class="x-admin-sm">
+    
+    <head>
+        <meta charset="UTF-8">
+        <title>欢迎页面-X-admin2.2</title>
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="./css/font.css">
+        <link rel="stylesheet" href="./css/xadmin.css">
+			  <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/3.20/dijit/themes/tundra/tundra.css"/> 
+			  <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/3.20/esri/css/esri.css" />
+			  <link rel="stylesheet" href="https://js.arcgis.com/3.20/dijit/themes/claro/claro.css" />
+        <script type="text/javascript" src="./lib/layui/layui.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./js/xadmin.js"></script>
+        <script type="text/javascript" src="../libs/jquery-1.10.1.js"></script>
+        <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+        <!--[if lt IE 9]>
+            <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+            <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    		<style>
+    			html,body{
+    				height: 100%;
+    			}
+    			.toolsbar {
+					    position: absolute;
+					    right: 15px;
+					    top: 30px;
+					    z-index: 12;
+					    background: #fff;
+					    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+					}
+					.toolsbar .layui-nav .layui-nav-item{
+						line-height: 30px;
+					}
+    		</style>
+    </head>
+    
+    <body>
+    	<!--
+        	作者：jinming_cai@163.com
+        	时间：2019-06-05
+        	描述：选项卡开始——添加项目
+        -->
+<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+  <ul class="layui-tab-title">
+    <li class="layui-this">基本属性</li>
+    <li>用户管理</li>
+  </ul>
+  <div class="layui-tab-content" style="height: 100px;">
+    <div class="layui-tab-item layui-show">
+    	  <div class="layui-fluid">
+            <div class="layui-row">
+                <form class="layui-form">
+                    <div class="layui-form-item">
+                        <label for="username" class="layui-form-label">
+                            <span class="x-red">*</span>用户名</label>
+                        <div class="layui-input-inline">
+                            <input type="text" id="username" name="username" required="" lay-verify="required" autocomplete="off" class="layui-input"></div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label for="username" class="layui-form-label">
+                            <span class="x-red">*</span>收货人</label>
+                        <div class="layui-input-inline">
+                            <input type="text" id="username" name="username" required="" lay-verify="required" autocomplete="off" class="layui-input"></div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label for="phone" class="layui-form-label">
+                            <span class="x-red">*</span>手机</label>
+                        <div class="layui-input-inline">
+                            <input type="text" id="phone" name="phone" required="" lay-verify="phone" autocomplete="off" class="layui-input"></div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label for="username" class="layui-form-label">
+                            <span class="x-red">*</span>收货地址</label>
+                        <div class="layui-input-inline">
+                            <input type="text" id="username" name="username" required="" lay-verify="required" autocomplete="off" class="layui-input"></div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label for="username" class="layui-form-label">
+                            <span class="x-red">*</span>配送物流</label>
+                        <div class="layui-input-inline">
+                            <select id="shipping" name="shipping" class="valid">
+                                <option value="shentong">申通物流</option>
+                                <option value="shunfeng">顺丰物流</option></select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label for="username" class="layui-form-label">
+                            <span class="x-red">*</span>支付方式</label>
+                        <div class="layui-input-inline">
+                            <select name="contrller">
+                                <option>支付方式</option>
+                                <option>支付宝</option>
+                                <option>微信</option>
+                                <option>货到付款</option></select>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label for="L_email" class="layui-form-label">
+                            <span class="x-red">*</span>发票抬头</label>
+                        <div class="layui-input-inline">
+                            <input type="text" id="L_email" name="email" required="" lay-verify="email" autocomplete="off" class="layui-input"></div>
+                        <div class="layui-form-mid layui-word-aux">
+                            <span class="x-red">*</span>
+                        </div>
+                    </div>
+                    <div class="layui-form-item layui-form-text">
+                        <label for="desc" class="layui-form-label">商品增加</label>
+                        <div class="layui-input-block">
+                            <table class="layui-table">
+                                <tbody>
+                                    <tr>
+                                        <td>haier海尔 BC-93TMPF 93升单门冰箱</td>
+																				<td>0.01</td>
+																				<td>984</td>
+																				<td>1</td>
+																				<td>删除</td>
+                                    </tr>
+												            <tr>
+												                <td>haier海尔 BC-93TMPF 93升单门冰箱</td>
+																        <td>0.01</td>
+																        <td>984</td>
+																        <td>1</td>
+																        <td>删除</td></tr>
+										        		</tbody>
+										        </table>
+						        		</div>
+						        </div>
+						        <div class="layui-form-item layui-form-text">
+						            <label for="desc" class="layui-form-label">描述</label>
+						            <div class="layui-input-block">
+						                <textarea placeholder="请输入内容" id="desc" name="desc" class="layui-textarea"></textarea>
+						            </div>
+						        </div>
+						        <div class="layui-form-item">
+						            <label for="L_repass" class="layui-form-label"></label>
+						            <button class="layui-btn" lay-filter="add" lay-submit="">增加</button></div>
+		        		</form>
+		        </div>
+        </div>
+    </div>
+    <div class="layui-tab-item">
+    	  <div class="layui-fluid">
+            <div class="layui-row">
+            		<div id="map-add">
+            			
+            		</div>
+            		<div class="toolsbar">
+									<ul class="layui-nav layui-bg-green">
+									  <li class="layui-nav-item"><a href="">新增</a></li>
+									  <li class="layui-nav-item">
+									    <a href="javascript:;">编辑</a>
+									  </li>
+									  <li class="layui-nav-item"><a href="">导入</a></li>
+									  <span class="layui-nav-bar" style="left: 396px; top: 55px; width: 0px; opacity: 0;"></span>
+									</ul>
+										
+								</div>
+            </div>
+    	  </div>
+    </div>
+  </div>
+</div> 
+<!--
+	作者：jinming_cai@163.com
+	时间：2019-06-05
+	描述：选项卡结束
+-->
+    </body>
+  <script src="https://js.arcgis.com/3.20/"></script>
+	<script type="text/javascript" src="../gis.js/projectAdd.js"></script>
+</html>

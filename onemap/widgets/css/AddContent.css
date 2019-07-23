@@ -1,0 +1,49 @@
+.on .blkRec,.gon{
+	  background: no-repeat center center url(images/gon.png);
+    height: 20px;
+    width: 20px;
+    background-size: contain;   
+    float: left;
+}
+.blkRec{
+	  background: no-repeat center center url(images/blackrec.png);
+    height: 20px;
+    width: 20px;
+    background-size: contain;   
+    float: left;
+}
+.geoSucc{
+	background: url(images/succ.png) no-repeat ;
+	background-position: left;
+	padding-left: 25px;
+	background-size: contain; 
+}
+.on .blkLine,.gon{
+	  background: no-repeat center center url(images/line.png);
+    height: 20px;
+    width: 20px;
+    background-size: contain;   
+    float: left;
+}
+.blkLine{
+	  background: no-repeat center center url(images/blackline.png);
+    height: 20px;
+    width: 20px;
+    background-size: contain;   
+    float: left;
+}
+
+.on .blkpoi,.gon{
+	  background: no-repeat center center url("../images/poi.png");
+    height: 20px;
+    width: 20px;
+    background-size: contain;   
+    float: left;
+}
+.blkpoi{
+	  background: no-repeat center center url("../images/blackpoi.png");
+    height: 20px;
+    width: 20px;
+    background-size: contain;   
+    float: left;
+}

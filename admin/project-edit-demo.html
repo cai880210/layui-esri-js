@@ -1,0 +1,63 @@
+
+  <div class="layui-form" lay-filter="layuiadmin-app-form-list" id="layuiadmin-app-form-list"style="padding: 20px 30px 0 0;">
+    <div class="layui-form-item">
+      <label class="layui-form-label">会员名称</label>
+      <div class="layui-input-inline">
+        <script type="text/html" template>
+          <input type="text" name="username" value="{{ d.params.username || '' }}" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+        </script>
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">性别</label>
+      <div class="layui-input-inline">
+        <script type="text/html" template>
+          <select name="label" lay-verify="required">
+            <option value="男" {{ d.params.sex === '男' ? 'selected' : '' }}>男</option>
+            <option value="女" {{ d.params.sex === '女' ? 'selected' : '' }}>女</option>
+          </select>
+        </script>
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">城市</label>
+      <div class="layui-input-inline">
+        <script type="text/html" template>
+          <input type="text" name="city" value="{{ d.params.city || '' }}" lay-verify="required" placeholder="请输入号码" autocomplete="off" class="layui-input">
+        </script>
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">邮箱</label>
+      <div class="layui-input-inline">
+        <script type="text/html" template>
+          <input type="text" name="email" value="{{ d.params.email || '' }}" lay-verify="required" placeholder="请输入号码" autocomplete="off" class="layui-input">
+        </script>
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">签名</label>
+      <div class="layui-input-inline">
+        <script type="text/html" template>
+          <textarea name="content" lay-verify="required" style="width: 400px; height: 150px;" autocomplete="off" class="layui-textarea">
+            {{ d.params.sign || '' }}
+          </textarea>
+        </script>
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <label class="layui-form-label">发布状态</label>
+      <div class="layui-input-inline">
+        <input type="checkbox" lay-verify="required" lay-filter="status" name="status" lay-skin="switch" lay-text="男|女">
+      </div>
+    </div>
+    <script type="text/html" template>
+      <input type="hidden" name="id" value="{{ d.params.id || '' }}">
+    </script>
+    <div class="layui-form-item">
+      <label class="layui-form-label"></label>
+      <div class="layui-input-inline">
+        <input type="button" lay-submit lay-filter="layuiadmin-app-form-submit" value="确认" class="layui-btn">
+      </div>
+    </div>
+  </div>

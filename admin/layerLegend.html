@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html class="x-admin-sm">
+    <head>
+        <meta charset="UTF-8">
+        <title>欢迎页面-X-admin2.2</title>
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+        <link rel="stylesheet" href="./css/font.css">
+        <link rel="stylesheet" href="./css/xadmin.css">
+        <script src="./lib/layui/layui.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./js/xadmin.js"></script>
+        <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+        <!--[if lt IE 9]>
+          <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+          <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+	 <style type="text/css">
+	     body {
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+			-khtml-user-select: none;
+			user-select: none;
+        }
+		span.ui-slider-small.inline.ui-slider-.ui-slider.ui-slider-horizontal.ui-widget.ui-widget-content.ui-corner-all {
+		   top: -2px;
+		}
+		.ui-slider .ui-slider-handle {
+	      cursor: pointer;
+	   }
+		#spinner-opts a .ace-icon{
+	       color: #4aa4ce;
+	       font-size: 100%;
+	   }
+	   	#spinner-opts a:hover .ace-icon{
+	       color: #f39525;
+	        font-size: 120%;
+	   }
+	   .ui-slider-small .ui-slider-handle {
+		    border-radius: 0; 
+		    width: 11px;
+		    height: 17px;
+		    margin-bottom: -0.45em;
+		    left: -0.35em;
+		}
+		.ui-slider-horizontal .ui-slider-handle {
+		    top: -.6em;
+		    left: 2px;
+		}
+		.ui-slider-small .ui-slider-handle:before, .ui-slider-small .ui-slider-handle:after {
+		    height: 7px;
+		    left: 3px;
+		    width: 3px;
+		}
+		.ui-slider-horizontal .ui-slider-handle {
+		    margin-left: -0.425em;
+		    top: -0.5em;
+		}				
+		#zf i
+		{
+			-ms-transform: rotate(90deg) scale(1.50,0.80) translate(-2px,-15px) skew(0deg,0deg);
+			-ms-transform-origin: 0% 0%;
+			-moz-transform: rotate(90deg) scale(1.50,0.80) translate(-2px,-15px) skew(0deg,0deg);
+			-moz-transform-origin: 0% 0%;
+			-webkit-transform: rotate(90deg)  scale(1.50,0.80) translate(-2px,-15px) skew(0deg,0deg);
+			-webkit-transform-origin: 0% 0%;
+			-o-transform: rotate(90deg)  scale(1.50,0.80) translate(-1px,-15px) skew(0deg,0deg);
+			-o-transform-origin: 0% 0%;
+			transform: rotate(90deg) scale(1.50,0.80) translate(-1px,-15px) skew(0deg,0deg);
+			transform-origin: 0% 0%
+		}
+		#zl i
+		{
+			-ms-transform: rotate(90deg) scale(1.50,0.80) translate(-2px,-15px) skew(0deg,0deg);
+			-ms-transform-origin: 0% 0%;
+			-moz-transform: rotate(90deg) scale(1.50,0.80) translate(-2px,-15px) skew(0deg,0deg);
+			-moz-transform-origin: 0% 0%;
+			-webkit-transform: rotate(90deg) scale(1.50,0.80) translate(-2px,-15px) skew(0deg,0deg);
+			-webkit-transform-origin: 0% 0%;
+			-o-transform: rotate(90deg) scale(1.50,0.80) translate(-2px,-15px) skew(0deg,0deg);
+			-o-transform-origin: 0% 0%;
+			transform: rotate(90deg) scale(1.50,0.80) translate(-2px,-15px) skew(0deg,0deg);
+			transform-origin: 0% 0%
+		}
+		
+	 </style>
+</head>
+<body style="background-color:white;">
+		<div id="spinner-opts">
+			  <i class="ace-icon fa fa-hand-o-right  blue" style="padding-left: 10px;"></i>
+					<span style="font-size: 12px;line-height: 25px;">透明度：</span>
+					<a href="javascript:doButtonApha('-1');"   ><i style="padding-right: 5px;" class="ace-icon glyphicon glyphicon-minus"></i></a>
+					<a  style="cursor:pointer;" id="a_Line"><input id="lineS" class="hidden" type="text" name="lines" data-min="1" data-max="10" data-step="1" value="5"  style="cursor:pointer;"/></a>
+					<a href="javascript:doButtonApha('1');"   ><i style="padding-left: 5px;" class="ace-icon glyphicon glyphicon-plus"></i></a>
+					<a  href="javascript:doLayerIndex('first');" id="zf" style="padding-left: 14px;"><i class="ace-icon glyphicon glyphicon-step-backward  " style="cursor:pointer;" title="置顶" ></i></a>
+					<a  href="javascript:doLayerIndex('up');" ><i class="ace-icon glyphicon  glyphicon-arrow-up " style="cursor:pointer;" " title="上移"></i></a>
+					<a  href="javascript:doLayerIndex('down');" ><i class="ace-icon glyphicon glyphicon-arrow-down  " style="cursor:pointer;" title=" 下移"></i></a>
+					<a   href="javascript:doLayerIndex('last');"  id="zl"> <i class="ace-icon glyphicon glyphicon-step-forward  " style="cursor:pointer;" title="置底"></i></a>				
+		</div>	
+</body>
+<script src="./lib/layui/layui.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./js/xadmin.js"></script>
+		    <script>
+				  layui.config({
+				    base: '../dist/' //静态资源所在路径
+				  }).extend({
+				    index: 'ext/index' //主入口模块
+				  }).use('index');
+    		var $ = layui.jquery;
+		    var legObj  = null;
+			$(function($) {
+				if(parent!=undefined){
+					legObj = parent.getCurrentLegObj();
+				}
+				if(legObj!=null){
+				   $("#lineS").val(parseInt(legObj.alpha*10));
+				   $(".ui-slider .ui-slider-handle").attr("title",legObj.alpha);
+				}
+				$('#spinner-opts small').css({display:'inline-block'});
+				var slide_styles = ['', 'green','red','purple','orange', 'dark'];
+				var ii = 0;
+				$("#spinner-opts input[type=text]").each(function() {
+					var $this = $(this);
+					$this.hide().after('<span />');
+					$this.next().addClass('ui-slider-small').
+					addClass("inline ui-slider-"+slide_styles[ii++ % slide_styles.length]).
+					css('width','120px').slider({
+						value:parseInt($this.val()),
+						range: "min",
+						animate:true,
+						min: parseInt($this.attr('data-min')),
+						max: parseInt($this.attr('data-max')),
+						step: parseFloat($this.attr('data-step')) || 1,
+						slide: function( event, ui ) {
+							 $this.val(ui.value);
+							 $(".ui-slider .ui-slider-handle").attr("title",(ui.value/10));
+							window.parent.setLayerOpacity(legObj,(ui.value/10));
+						}
+					});
+				});
+				
+			});
+			
+            //置顶first//up上移//down下移//last置底
+			function doLayerIndex(state){
+				window.parent.setLayerIndex(legObj,state);
+			}
+            //设置透明度
+            function doButtonApha(_i){
+            	var value = parseInt($("#lineS").val())+parseInt(_i);
+            	if(value>10 || value < 0 ){
+            		return ;
+            	}
+            	//设置值
+            	$("#lineS").val(value);
+                $(".ui-slider .ui-slider-handle").attr("title",(value/10));
+                //设置
+            	$("#spinner-opts input[type=text]").each(function() {
+					var $this = $(this);
+					$this.next().slider({value:parseInt($this.val())});
+				});
+				window.parent.setLayerOpacity(legObj,(value/10));
+    			
+            }
+           
+		</script>
+</html>

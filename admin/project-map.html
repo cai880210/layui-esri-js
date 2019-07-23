@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+    <title>天地一体化</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/xadmin.css">
+    <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/3.20/dijit/themes/tundra/tundra.css"/> 
+    <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/3.20/esri/css/esri.css" />
+    <link rel="stylesheet" href="https://js.arcgis.com/3.20/dijit/themes/claro/claro.css" />
+    
+    <script src="./lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/xadmin.js"></script>
+	</head>
+	<style>
+		#map {
+    position: absolute;
+		margin: 0;
+		padding: 0;
+    left:15px;
+    right:15px;
+    top:55px;
+    bottom:15px;
+    z-index: 0;
+    background: #1caea0;
+    background: linear-gradient(to top, #81ede3, #009688);
+    box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.3);
+}
+
+.container {
+	max-width:100%
+}
+.toolsbar {
+    position: absolute;
+    right: 15px;
+    top: 72px;
+    z-index: 12;
+    background: #fff;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+}
+.toolsbar .layui-nav .layui-nav-item{
+	line-height: 40px;
+}
+</style>
+	<body class="claro">
+	<div class="x-nav">
+      <span class="layui-breadcrumb" style="visibility: visible;">
+        <a href="">首页</a><span lay-separator="">/</span>
+        <a href="">演示</a><span lay-separator="">/</span>
+        <a>
+          <cite>导航元素</cite></a>
+      </span>
+      <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" onclick="location.reload()" title="刷新">
+        <i class="layui-icon layui-icon-refresh" style="line-height:30px"></i></a>
+    </div>
+<!-- 地图开始 -->
+	<div id="map"></div>
+		<!--
+        	作者：cai
+        	时间：2019-06-04
+        	描述：地图结束
+        -->
+<!--工具条开始 -->
+<div class="toolsbar">
+	<ul class="layui-nav layui-bg-green">
+	  <li class="layui-nav-item"><a href=""><i class="mdi mdi-eye"></i>查看</a></li>
+	  <li class="layui-nav-item">
+	    <a href="javascript:;">对比<span class="layui-nav-more"></span></a>
+	    <dl class="layui-nav-child">
+	      <dd><a href="">选项1</a></dd>
+	      <dd><a href="">选项2</a></dd>
+	      <dd><a href="">选项3</a></dd>
+	    </dl>
+	  </li>
+	  <li class="layui-nav-item"><a href="">测量</a></li>
+	  <li class="layui-nav-item">
+	    <a href="javascript:;">解决方案<span class="layui-nav-more"></span></a>
+	    <dl class="layui-nav-child">
+	      <dd><a href="">移动模块</a></dd>
+	      <dd><a href="">后台模版</a></dd>
+	      <dd><a href="">电商平台</a></dd>
+	    </dl>
+	  </li>
+	  <li class="layui-nav-item"><a href="">标绘</a></li>
+	  <li class="layui-nav-item"><a href="">打印</a></li>
+	  <span class="layui-nav-bar" style="left: 396px; top: 55px; width: 0px; opacity: 0;"></span>
+	</ul>
+		
+</div>
+<!-- 工具条介绍-->
+	</body>
+	<script src="https://js.arcgis.com/3.20/"></script>
+	<script type="text/javascript" src="../gis.js/run.js"></script>
+	<script type="text/javascript" src="../gis.js/main.js"></script>
+</html>

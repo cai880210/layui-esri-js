@@ -1,0 +1,66 @@
+.layui-btn1
+{
+	-webkit-user-select:none;
+	-ms-user-select:none;
+	-moz-user-select:none;
+	outline:0;
+	-webkit-appearance:none;
+	transition:all .3s;
+	-webkit-transition:all .3s;
+	box-sizing:border-box;
+	vertical-align:middle;
+	display:inline-block;
+	margin:auto;
+	height:38px;
+	width:110px;
+	line-height:38px;
+	padding:0 18px;
+	background-color:#009688;
+	color:#fff;
+	white-space:nowrap;
+	text-align:center;
+	font-size:14px;
+	border:none;
+	border-radius:2px;
+	cursor:pointer
+}
+.layui-btn-primary1
+{
+	border:1px solid #C9C9C9;
+	background-color:#fff;
+	color:#555;
+}
+.layui-btn2
+{
+	position:relative;
+	left: 68px;
+	-webkit-user-select:none;
+	-ms-user-select:none;
+	-moz-user-select:none;
+	outline:0;
+	-webkit-appearance:none;
+	transition:all .3s;
+	-webkit-transition:all .3s;
+	box-sizing:border-box;
+	vertical-align:middle;
+	display:inline-block;
+	margin:auto;
+	height:38px;
+	width:110px;
+	line-height:38px;
+	padding:0 18px;
+	background-color:#009688;
+	color:#fff;
+	white-space:nowrap;
+	text-align:center;
+	font-size:14px;
+	border:none;
+	border-radius:2px;
+	cursor:pointer
+}
+.layui-btn-primary2
+{
+	border:1px solid #C9C9C9;
+	background-color:#fff;
+	color:#555;
+}

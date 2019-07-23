@@ -1,0 +1,129 @@
+
+.onemapMyLegend {
+	position: absolute;
+	z-index: 99;
+}
+
+.onemapMyLegend .ovwContainer {
+	position: absolute;
+	display: none;
+	background-color: #666;
+}
+
+.onemapMyLegend .map {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-color: #FFF;
+}
+
+.onemapMyLegend .ovwHighlight {
+	position: absolute;
+	display: none;
+	z-index: 99;
+	cursor: move;
+}
+
+.onemapMyLegend .ovwButton {
+	position: relative;
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+	z-index: 99;
+}
+
+.onemapMyLegend .ovwMaximizer {
+	display: none;
+}
+
+.onemapMyLegend .ovwDisabledButton {
+	display: none !important;
+}
+
+.onemapMyLegend .ovwMaximize {
+	background: url("../dijit/images/overview.png") 0px -130px;
+}
+
+.onemapMyLegend .ovwRestore {
+	background: url("../dijit/images/overview.png") 0px -104px;
+}
+
+.onemapMyLegend.ovwTL {
+	top: 0px;
+	left: 0px;
+}
+
+.onemapMyLegend.ovwTR {
+	top: 0px;
+	right: 0px;
+}
+
+.onemapMyLegend.ovwBL {
+	bottom: 0px;
+	left: 0px;
+}
+
+.onemapMyLegend.ovwBR {
+	bottom: 0px;
+	right: 0px;
+}
+
+.onemapMyLegend.ovwTL .ovwContainer {
+	top: 0px;
+	left: 0px;
+	border-bottom: 1px solid #000;
+	border-right: 1px solid #000;
+	padding-bottom: 2px;
+	padding-right: 2px;
+}
+
+.onemapMyLegend.ovwTR .ovwContainer {
+	top: 0px;
+	right: 0px;
+	border-bottom: 1px solid #000;
+	border-left: 1px solid #000;
+	padding-bottom: 2px;
+	padding-left: 2px;
+}
+
+.onemapMyLegend.ovwBL .ovwContainer {
+	bottom: 0px;
+	left: 0px;
+	border-top: 1px solid #000;
+	border-right: 1px solid #000;
+	padding-top: 2px;
+	padding-right: 2px;
+}
+
+.onemapMyLegend.ovwBR .ovwContainer {
+	bottom: 0px;
+	right: 0px;
+	border-top: 1px solid #000;
+	border-left: 1px solid #000;
+	padding-top: 2px;
+	padding-left: 2px;
+}
+
+.onemapMyLegend.ovwTL .ovwShow, .onemapMyLegend.ovwBR .ovwHide {
+	background: url("../dijit/images/overview.png") 0px -26px;
+}
+
+.onemapMyLegend.ovwTR .ovwShow, .onemapMyLegend.ovwBL .ovwHide {
+	background: url("../dijit/images/overview.png") 0px 0px;
+}
+
+.onemapMyLegend.ovwBL .ovwShow, .onemapMyLegend.ovwTR .ovwHide {
+	background: url("../dijit/images/overview.png") 0px -78px;
+}
+
+.onemapMyLegend.ovwBR .ovwShow, .onemapMyLegend.ovwTL .ovwHide {
+	background: url("../dijit/images/overview.png") 0px -52px;
+}
+
+.onemapMyLegend .bingLogo-lg {
+	display: none;
+}
+
+@font-face {
+	font-family: 'popup'; src: url("../dijit/font/popup.eot?46610942"); src: url("../dijit/font/popup.eot?46610942#iefix") format('embedded-opentype'), url("../dijit/font/popup.woff?46610942") format('woff'), url("../dijit/font/popup.ttf?46610942") format('truetype'), url("../dijit/font/popup.svg?46610942#popup") format('svg'); font-weight: normal; font-style: normal;
+}

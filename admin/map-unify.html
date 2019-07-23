@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+    <title>天地一体化</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/xadmin.css">
+    <link rel="stylesheet" href="./css/onemap.css">
+    <link rel="stylesheet" href="./css/map-unify.css">
+        <link rel="stylesheet" href="./css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/3.20/dijit/themes/tundra/tundra.css"/> 
+    <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/3.20/esri/css/esri.css" />
+    <link rel="stylesheet" href="https://js.arcgis.com/3.20/dijit/themes/claro/claro.css" />
+
+    <script src="../dist/layui.js" charset="utf-8"></script>
+		<script>
+	        layui.config({
+				    base: '../dist/' //静态资源所在路径
+				  }).extend({
+				    index: 'ext/index' //主入口模块
+				  }).use(['index','admin', 'table','laydate', 'form'])
+
+
+		</script>
+    <script type="text/javascript" src="./js/xadmin.js"></script>
+	</head>
+	
+	<body class="claro">
+	
+	<!-- 地图开始 -->
+	<div id="map">
+		<!-- 比例尺-->
+		<!-- 搜索-->
+		<div class="search-warp">
+			<input id="map-searchTxt" class="search-bar" name="search" placeholder="搜索" />
+			<i class="layui-icon layui-icon-search"></i> 
+			<button id="map-search" class="map-searchBtn" value="">搜索</button>
+			<div>
+				<div id ="map-grid"></div>
+			</div>
+		</div>
+<!--工具条开始 -->
+
+<ul class="layui-nav tools-warp"  lay-filter="toolsbar">
+  	<li class="layui-nav-item"><a data-id="map-identify">点查</a></li>
+  	<li class="layui-nav-item">
+    	<a data-id="map-layersCtrl">图层</a>
+	</li>
+  	<li class="layui-nav-item">
+		<a >列表</a>
+		<dl class="layui-nav-child">
+			<dd><a data-id="project_list" >项目列表</a></dd>
+			<dd><a data-id="tuban_list" >图斑列表</a></dd>
+			<dd><a data-id="biaozhu_list" >标注点列表</a></dd>
+		</dl>
+	</li>
+  <li class="layui-nav-item">
+		<a >工具箱</a>
+		<dl class="layui-nav-child">
+			<dd><a data-id="measure"><i class="iconfont iconRuler"></i>测量</a></dd>
+			<dd><a data-id="draw"><i class="iconfont iconmd-create"></i>标绘</a></dd>
+			<dd><a data-id="compare"><i class="iconfont iconcomparearrows"></i>对比</a></dd>
+			<dd><a data-id="query"><i class="iconfont iconchangehistory"></i>图形搜索</a></dd>
+		</dl>
+	</li>
+	<li class="layui-nav-item"><a data-id='toolBoxMenu'><i class="layui-icon layui-icon-menu-fill"></i></a></li>
+</ul>
+
+
+<div class="layui-tab tools-warp" id="toolBox" lay-filter="toolBox" lay-allowClose="true" style="display:none;top: 56px;z-index: 6;">
+  <ul class="layui-tab-title">
+  	<li class="layui-this" lay-id="query">图形搜索</li>
+  	<li class="" lay-id="layersCtrl">图层控制</li>
+  </ul>
+  <div class="layui-tab-content">
+    <div class="layui-tab-item layui-show">    	    
+    <!--图形搜索  id="geometry-query-content"-->
+	  	<div class="graphic-search">
+				<ul class="layui-nav layui-bg-green" lay-filter="queryList">
+				  	<li class="layui-nav-item"><a data-id="circle">圆选</a></li>
+				  	<li class="layui-nav-item"><a data-id="rectangle">框选</a></li>
+				  	<li class="layui-nav-item">
+						<a>线选</a>
+						<dl class="layui-nav-child">
+						  <dd><a data-id="polyline-1">5米</a></dd>
+						  <dd><a data-id="polyline-2">10米</a></dd>
+						  <dd><a data-id="polyline-3">15米</a></dd>
+						  <dd><a data-id="polyline-other">其他</a></dd>
+						</dl>
+				  	</li>
+				</ul>
+	  	</div>
+    </div>
+    <div class="layui-tab-item">
+     	<div class="layers-warp"><form class="layui-form"><div  id="layersCtrl-content"></div></form></div>
+    </div>
+  </div>
+</div>
+
+	  <!--测量-->
+	  <!--<div class="measure-warp"><div id="measure-content"></div></div>-->
+    
+    <!--标绘-->
+    <!--<div class="draw-warp"><div id="draw-content"></div></div>-->
+
+    <!--对比-->
+    <!--<div class="compare-warp"><div id="compare-content"></div></div>-->
+    
+    <!--图形搜索-->
+  	<!--<div class="graphic-search" id="geometry-query-content" style="display: none;">
+			<ul class="layui-nav layui-bg-green" lay-filter="queryList">
+			  	<li class="layui-nav-item"><a data-id="circle">圆选</a></li>
+			  	<li class="layui-nav-item"><a data-id="rectangle">框选</a></li>
+			  	<li class="layui-nav-item">
+					<a>线选</a>
+					<dl class="layui-nav-child">
+					  <dd><a data-id="polyline-1">5米</a></dd>
+					  <dd><a data-id="polyline-2">10米</a></dd>
+					  <dd><a data-id="polyline-3">15米</a></dd>
+					  <dd><a data-id="polyline-other">其他</a></dd>
+					</dl>
+			  	</li>
+			</ul>
+  	</div>-->
+  	<!--
+      	作者：jinming_cai@163.com
+      	时间：2019-06-28
+      	描述：图层控制
+      -->
+		<!--<div class="layers-warp"><form class="layui-form"><div  id="layersCtrl-content"></div></form></div>-->
+
+		    
+    <!--底图-->
+    <div class="myBaseMap-warp"><div id="myBaseMap-content"></div></div>
+    
+<!-- 工具条结束-->
+		<!-- 比例尺-->	
+		<div class="mapScale-warp">
+			<p><label>当前比例尺:</label><span id="map-scale"></span></p>
+		</div>
+		<!-- 底图-->
+		<div id="basemapBtn" class="basemap-btn">
+			<img class="layadmin-homepage-pad-img" src="./images/test/thumbnailUrl_5.png" width="40px" height="40px">
+		</div>
+	</div>
+<!--
+    	作者：cai
+    	时间：2019-06-04
+    	描述：地图结束
+   -->
+<!--
+	作者：jinming_cai@163.com
+	时间：2019-06-10
+	描述：地图底图切换开始
+-->
+  <div id="BasemapGallery"></div>
+<!--
+	作者：jinming_cai@163.com
+	时间：2019-06-10
+	描述：地图底图切换结束
+-->
+
+		<!-- 图层图例显示框 -->
+		<div class="legend-warp" >	
+			<div id="legendDiv" >
+				<div id="expandbutton" class="expand_div_zs" onclick="showDiv()"></div>
+			    <table >
+			       <tr>
+			       <td style="width: 30px;">
+			       <div class="btn-group"  id="morelayerGroup" style="display: none;">
+		                <i  class="fa fa-list ace-icon glyphicon glyphicon-align-justify  blue bigger" data-toggle="dropdown" class="dropdown-toggle" style="padding-top: 0px;padding-left: 0px;z-index: 1;cursor:pointer;"></i>
+						<ul class="dropdown-menu" id="moreLayers" style="max-height:160px;overflow:auto;min-width:80px;border-radius:0">
+						</ul>
+			       </div>
+			       </td>
+			       <td id="td_legendframe" style="text-align: center;">
+			       <td>
+			       </tr>
+			    </table>
+					<div id="legendContent" style="display: none;" >
+						<div class="tabbable tabs-left"  >
+							<ul class="nav nav-tabs myLegends" id="myLegends" style="display: block;float:left;" >
+							</ul>
+							<div  id="layerLegDiv" class="tab-content" style="padding: 5px 12px;height: 155px;float:left;width:280px;"></div>
+						</div>
+		      </div>
+			</div>
+		</div>
+
+	<!-- 底图日期-->
+	<!--<div style="background-color:white;position: absolute;bottom: 30px;left:50px;z-index: 20;">
+		<p><label>地图日期:</label><span id="map-date">2019-06-06</span></p>
+	</div>-->
+	</body>
+	<script src="https://js.arcgis.com/3.20/"></script>
+	<script type="text/javascript" src="../gis.js/run.js"></script>
+	<script type="text/javascript" src="../gis.js/main.js"></script>
+</html>

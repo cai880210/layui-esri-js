@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html class="x-admin-sm">
+    
+    <head>
+        <meta charset="UTF-8">
+        <title>欢迎页面-X-admin2.2</title>
+        <base target="_blank" href="http://127.0.0.1:8020/front_end_frame/admin/" /> 
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <link rel="stylesheet" href="./css/font.css">
+        <link rel="stylesheet" href="./css/xadmin.css">
+			  <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/3.20/dijit/themes/tundra/tundra.css"/> 
+			  <link rel="stylesheet" type="text/css" href="https://js.arcgis.com/3.20/esri/css/esri.css" />
+			  <link rel="stylesheet" href="https://js.arcgis.com/3.20/dijit/themes/claro/claro.css" />
+        <script type="text/javascript" src="./lib/layui/layui.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./js/xadmin.js"></script>
+        <script type="text/javascript" src="../libs/jquery-1.10.1.js"></script>
+        <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
+        <!--[if lt IE 9]>
+            <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+            <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    		<style>
+    			html,body{
+    				height: 100%;
+    			}
+    			.layui-fluid{
+    				padding: 0;
+    			}
+    			.layui-tab{
+    				margin: 0;
+    			}
+    			.toolsbar {
+					    position: absolute;
+					    right: 15px;
+					    top: 60px;
+					    z-index: 12;
+					    background: #fff;
+					    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+					}
+					.toolsbar .layui-nav{
+						border-radius: 0;
+					}
+					.toolsbar .layui-nav .layui-nav-item{
+						line-height: 30px;
+					}
+					
+      .nav>.layui-tab-title>li{
+            display: block;
+        }
+      .nav>.layui-tab-title{
+            float: left;
+            width: 100px;
+        }
+      .nav>.layui-tab-content{
+            float: left;
+            width: 500px;
+            padding: 0;
+				}
+    		</style>
+    </head>    
+    <body>
+    	<!--
+        	作者：jinming_cai@163.com
+        	时间：2019-06-05
+        	描述：选项卡开始——添加项目
+        -->
+<div class="nav layui-tab layui-tab-brief" lay-filter="">
+  <ul class="layui-tab-title">
+    <li class="layui-this">项目基本信息</li>
+    <li>关联的图斑</li>
+  </ul>
+  <div class="layui-tab-content" style="height: 100px;">
+    <div class="layui-tab-item layui-show">
+    	  <div class="layui-fluid">
+            <div class="layui-row">
+            	<!--
+                	作者：jinming_cai@163.com
+                	时间：2019-06-10
+                	描述：基本信息——子选项卡
+                -->
+							<div class="layui-tab layui-tab-brief" lay-filter="">
+							  <ul class="layui-tab-title">
+							    <li class="layui-this">基本属性</li>
+							  </ul>
+							  <div class="layui-tab-content" style="height: 100px;">
+							    <div class="layui-tab-item layui-show">
+    	                <form class="layui-form">
+										    <div class="layui-form-item">
+										    	<div class="layui-inline">
+											      <label for="username" class="layui-form-label"><span class="x-red">*</span>项目名称</label>
+												    <div class="layui-input-block">
+											          <input type="text" name="username" value="{{ d.product.prnm || '' }}" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+											      </div>
+											    </div>
+										    	<div class="layui-inline">
+											      <label for="username" class="layui-form-label"><span class="x-red">*</span>所属行业</label>
+												    <div class="layui-input-block">
+											          <input type="text" name="username" value="{{ d.product.prtype || '' }}" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+											      </div>
+											    </div>
+											    <div class="layui-inline">
+											      <label for="username" class="layui-form-label"><span class="x-red">*</span>项目性质</label>
+												    <div class="layui-input-block">
+											          <input type="text" name="username" value="{{ d.product.xmxz || '' }}" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+											      </div>
+											    </div>
+										    </div>
+										    <div class="layui-form-item">
+										    	<div class="layui-inline">
+											      <label for="username" class="layui-form-label"><span class="x-red">*</span>项目类型</label>
+												    <div class="layui-input-block">
+											          <input type="text" name="username" value="{{ d.product.xmlx || '' }}" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+											      </div>
+											    </div>
+										    	<div class="layui-inline">
+											      <label for="username" class="layui-form-label"><span class="x-red">*</span>工程总投资</label>
+												    <div class="layui-input-block">
+											          <input type="text" name="username" value="{{ d.product.gcztz || '' }}" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+											      </div>
+											    </div>
+											    <div class="layui-inline">
+											      <label for="username" class="layui-form-label"><span class="x-red">*</span>土建投资</label>
+												    <div class="layui-input-block">
+											          <input type="text" name="username" value="{{ d.product.tjtz || '' }}" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+											      </div>
+											    </div>
+										    </div>
+		                    <div class="layui-form-item">
+		                      <div class="layui-inline">
+											      <label for="username" class="layui-form-label"><span class="x-red">*</span>建设地点</label>
+												    <div class="layui-input-block">
+											          <input type="text" name="username" value="{{ d.product.jsdd || '' }}" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+											      </div>
+											    </div>
+										    	<div class="layui-inline">
+											      <label for="username" class="layui-form-label"><span class="x-red">*</span>涉及区域</label>
+												    <div class="layui-input-block">
+											          <input type="text" name="username" value="{{ d.product.sjqy || '' }}" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+											      </div>
+											    </div>
+											    <div class="layui-inline">
+											      <label for="username" class="layui-form-label"><span class="x-red">*</span>项目规模</label>
+												    <div class="layui-input-block">
+											          <input type="text" name="username" value="{{ d.product.xmgm || '' }}" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+											      </div>
+											    </div>
+		                    </div>
+		                    <div class="layui-form-item">
+										    	<div class="layui-inline">
+											      <label for="username" class="layui-form-label"><span class="x-red">*</span>计划开工时间</label>
+												    <div class="layui-input-block">
+											          <input type="text" name="username" value="{{ d.product.jhkgsj || '' }}" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+											      </div>
+											    </div>
+										    	<div class="layui-inline">
+											      <label for="username" class="layui-form-label"><span class="x-red">*</span>计划完工时间</label>
+												    <div class="layui-input-block">
+											          <input type="text" name="username" value="{{ d.product.jhwgsj || '' }}" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+											      </div>
+											    </div>
+											    <div class="layui-inline">
+											      <label for="username" class="layui-form-label"><span class="x-red">*</span>防治责任面积</label>
+												    <div class="layui-input-block">
+											          <input type="text" name="username" value="{{ d.product.darea || '' }}" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+											      </div>
+											    </div>
+									      </div>
+		                    <div class="layui-form-item">
+										    	<div class="layui-inline">
+											      <label for="username" class="layui-form-label"><span class="x-red">*</span>设计水平年</label>
+												    <div class="layui-input-block">
+											          <input type="text" name="username" value="{{ d.product.sjspn || '' }}" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+											      </div>
+											    </div>
+										    	<div class="layui-inline">
+											      <label for="username" class="layui-form-label"><span class="x-red">*</span>占地面积</label>
+												    <div class="layui-input-block">
+											          <input type="text" name="username" value="{{ d.product.zdmj || '' }}" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+											      </div>
+											    </div>
+											    <div class="layui-inline">
+											      <label for="username" class="layui-form-label"><span class="x-red">*</span>方案审批部门代码</label>
+												    <div class="layui-input-block">
+											          <input type="text" name="username" value="{{ d.product.faspbmdm || '' }}" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+											      </div>
+											    </div>
+		                    </div>
+		                    <div class="layui-form-item">
+										    	<div class="layui-inline">
+											      <label for="username" class="layui-form-label"><span class="x-red">*</span>方案审批部门</label>
+												    <div class="layui-input-block">
+											          <input type="text" name="username" value="{{ d.product.faspbm || '' }}" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+											      </div>
+											    </div>
+										    	<div class="layui-inline">
+											      <label for="username" class="layui-form-label"><span class="x-red">*</span>方案审批部门级别</label>
+												    <div class="layui-input-block">
+											          <input type="text" name="username" value="{{ d.product.faspbmjb || '' }}" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+											      </div>
+											    </div>
+											    <div class="layui-inline">
+											      <label for="username" class="layui-form-label"><span class="x-red">*</span>发改委项目编码</label>
+												    <div class="layui-input-block">
+											          <input type="text" name="username" value="{{ d.product.fgwxmbm || '' }}" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+											      </div>
+											    </div>
+		                    </div>
+		                    <div class="layui-form-item">
+										    	<div class="layui-inline">
+											      <label for="username" class="layui-form-label"><span class="x-red">*</span>项目地址</label>
+												    <div class="layui-input-block">
+											          <input type="text" name="username" value="{{ d.product.xmdz || '' }}" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+											      </div>
+											    </div>
+										    	<div class="layui-inline">
+											      <label for="username" class="layui-form-label"><span class="x-red">*</span>建设状态</label>
+												    <div class="layui-input-block">
+											          <input type="text" name="username" value="{{ d.product.qdcs || '' }}" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+											      </div>
+											    </div>
+											    <div class="layui-inline">
+											      <label for="username" class="layui-form-label"><span class="x-red">*</span>实际开工时间</label>
+												    <div class="layui-input-block">
+											          <input type="text" name="username" value="{{ d.product.sjkgsj || '' }}" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+											      </div>
+											    </div>
+		                    </div>
+		                    <div class="layui-form-item">
+										    	<div class="layui-inline">
+											      <label for="username" class="layui-form-label"><span class="x-red">*</span>预计竣工时间</label>
+												    <div class="layui-input-block">
+											          <input type="text" name="username" value="{{ d.product.jhwgsj || '' }}" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+											      </div>
+											    </div>
+										    	<div class="layui-inline">
+											      <label for="username" class="layui-form-label"><span class="x-red">*</span>施工方联系人</label>
+												    <div class="layui-input-block">
+											          <input type="text" name="username" value="{{ d.product.sgwlxr || '' }}" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+											      </div>
+											    </div>
+											    <div class="layui-inline">
+											      <label for="username" class="layui-form-label"><span class="x-red">*</span>施工方联系人电话</label>
+												    <div class="layui-input-block">
+											          <input type="text" name="username" value="{{ d.product.sgdwlxfs || '' }}" lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+											      </div>
+											    </div>
+		                    </div>
+								        <div class="layui-form-item">
+								            <label for="L_repass" class="layui-form-label"></label>
+								            <button class="layui-btn" lay-filter="add" lay-submit="">增加</button></div>
+				        		</form>
+							    </div>
+							  </div>
+							</div>
+		        </div>
+        </div>
+    </div>
+    <div class="layui-tab-item">
+    	  <div class="layui-fluid">
+            <div class="layui-row">
+							<div class="layui-tab layui-tab-brief" lay-filter="">
+							  <ul class="layui-tab-title">
+							    <li class="layui-this">基本信息</li>
+							  </ul>
+							  <div class="layui-tab-content" style="height: 100px;">
+							    <div class="layui-tab-item layui-show">
+                                    	
+											<script type="text/html" id="toolbar">
+											  <div class="layui-btn-container">
+											    <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
+											    <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>
+											    <button class="layui-btn layui-btn-sm" lay-event="isAll">验证是否全选</button>
+											  </div>
+											</script>
+											
+											<table id="project-detail-tb" lay-filter="project-detail-tb"></table>
+											
+											<script type="text/html" id="barDemo">
+											  <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+											  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+											</script>
+
+											<script type="text/html" id="switchTpl">
+											  <input type="checkbox" name="yyy" lay-skin="switch" lay-text="女|男">
+											</script>
+											
+											<script type="text/html" id="checkboxTpl">
+											  <input type="checkbox" name="" title="锁定" checked>
+											</script>
+											
+							    </div>
+							  </div>
+							</div>
+
+            </div>
+    	  </div>
+    </div>
+
+  </div>
+</div> 
+<!--
+	作者：jinming_cai@163.com
+	时间：2019-06-05
+	描述：选项卡结束
+-->
+        <script>
+        	var uidPr = 22;
+	        layui.config({
+				    base: "../dist/"
+				  }).extend({
+				    index: "ext/index"
+				  }).use(["index", "table","laydate", "form"], function(){
+				    var $ = layui.$
+				    ,form = layui.form
+				    ,table = layui.table;
+		        var laydate = layui.laydate;
+						
+									  table.render({
+									    elem: "#project-detail-tb"
+									    ,height: 300
+									    ,title: "用户数据表"
+									    ,url: "http://192.168.110.91:8080/base/projAreaMapspot/findProjAreaMapspotListByPage"
+									    ,none:"目前没有数据！"									    
+									    ,page: !0
+									    ,where:{uid_pr:uidPr}									    
+									    ,request: {
+										    pageName: "pageNo" 
+										    ,limitName: "pageSize" 
+										  }
+									    ,limit: 5
+									    ,limits: [5,10, 15, 20, 25, 30]
+									    
+									    ,cols: [[
+									      {type: "checkbox", fixed: "left"}
+									      ,{field:"OBJECTID", title:"OBJECTID", width:80, fixed: "left", unresize: true, sort: true,templet: function(x){
+									        return "<em>"+ x.qdcs +"</em>"
+									      }}
+									      ,{field:"username", title:"用户名", width:120, edit: "text", templet: function(x){
+									        return "<em>"+ x.qarea +"</em>"
+									      }}
+									      ,{field:"email", title:"邮箱", hide: true, width:150, edit: "text", templet: function(x){
+									        return "<em>"+ x.note +"</em>"
+									      }}
+									      ,{field:"XQMC", title:"城市", width:100,templet: function(x){
+									        return "<em>"+ x.qdtype +"</em>"
+									      }}
+									      ,{field:"SSJD", title:"签名",templet: function(x){
+									        return "<em>"+ x.jsdwlxr +"</em>"
+									      }}
+									      ,{fixed: "right", title:"操作", toolbar: "#barDemo", width:150}
+									    ]]
+									    ,text: "对不起，加载出现异常！"
+									    ,done: function() {
+									        
+									    }    
+									    ,response: {
+									      statusName: "code"
+									      ,statusCode: 200
+									    }
+									    ,parseData: function(res){	
+									    	
+									    	console.log(res);
+									      return {
+									        "code": res.code
+									        ,"msg": res.msg
+									        ,"count": res.data.total
+									        ,"data": res.data.records
+									      };
+									    }
+									  });
+				  });
+
+				</script>
+    </body>
+
+</html>

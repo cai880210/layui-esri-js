@@ -1,0 +1,65 @@
+<style>
+	.layui-fluid {
+    padding: 0 15px;
+}
+.layui-card-body {
+    padding: 5px 10px;
+
+}
+</style>
+        <div class="layui-fluid">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-body ">
+                            <form class="layui-form layui-col-space5" >
+                                <div class="layui-input-inline layui-show-xs-block">
+                                    <input class="layui-input" placeholder="开始日" name="start" id="start"></div>
+                                <div class="layui-input-inline layui-show-xs-block">
+                                    <input class="layui-input" placeholder="截止日" name="end" id="end"></div>
+                                <div class="layui-input-inline layui-show-xs-block">
+                                    <button class="layui-btn" lay-submit="" lay-filter="sreach">
+                                        <i class="layui-icon">&#xe615;</i></button>
+                                </div>
+
+                            </form>
+
+                        </div>
+
+                        <div class="layui-card-body ">
+                        		<script type="text/html" id="toolbartuban">
+														  <div class="layui-btn-container">
+														    <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
+														    <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>
+														    <button class="layui-btn layui-btn-sm" lay-event="isAll">验证是否全选</button>
+														  </div>
+														</script>
+														
+														<table id="biaozhu-tb" lay-filter="biaozhu-tb"></table>
+														
+														<script type="text/html" id="barDemo">
+														  <a class="layui-btn layui-btn-xs" lay-event="geolocate">定位</a>
+														  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="detail">详情</a>
+														</script>
+														
+														<script type="text/html" id="usernameTpl">
+														  <a href="" class="layui-table-link">{{d.product.username || ''}}</a>
+														</script>
+														
+														<script type="text/html" id="switchTpl">
+														  <input type="checkbox" name="yyy" lay-skin="switch" lay-text="女|男">
+														</script>
+														
+														<script type="text/html" id="checkboxTpl">
+														  <input type="checkbox" name="" title="锁定" checked>
+														</script>
+														
+														<script type="text/html" id="LAY_table_tpl_email">
+														  <span {{# if(!d.activate){ }}style="color:#999"{{# } }}>{{ d.product.email }}</span>
+														</script>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>

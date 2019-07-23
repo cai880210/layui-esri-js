@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html class="x-admin-sm">
+    
+    <head>
+        <meta charset="UTF-8">
+        <title>数据监管-区域监管</title>
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8" />
+        <link rel="stylesheet" href="./css/font.css">
+        <link rel="stylesheet" href="./css/xadmin.css">
+        <link rel="stylesheet" href="./css/area-supervise.css">
+        <link rel="stylesheet" href="./css/iconfont.css">
+        <script src="./lib/layui/layui.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./js/xadmin.js"></script>
+        <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.staticfile.org/vue-resource/1.5.1/vue-resource.min.js"></script>
+		<!-- 引入样式 -->
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<!-- 引入组件库 -->
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    </head>
+    
+    <body>
+        
+        <div class="layui-fluid">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-body ">
+                            <form class="layui-form layui-col-space5">
+                                <div class="layui-input-inline layui-show-xs-block">
+                                    <input type="text" name="title" required="" lay-verify="required" placeholder="图斑编号" autocomplete="off" class="layui-input"></div>
+                                <div class="layui-input-inline layui-show-xs-block">
+                                    <input type="text" name="title" required="" lay-verify="required" placeholder="项目名称" autocomplete="off" class="layui-input"></div>
+                                
+                                <div class="layui-input-inline layui-show-xs-block">
+                                    <select name="contrller">
+                                        <option>扰动变化类型</option>
+                                        <option>新增</option>
+                                        <option>扰动范围增大</option>
+                                        <option>扰动范围缩小</option>
+                                        <option>扰动范围不变</option>
+                                        <option>不再扰动</option></select>
+                                </div>
+                                <div class="layui-input-inline layui-show-xs-block">
+                                    <select name="contrller">
+                                        <option>扰动合规性</option>
+                                        <option>合规</option>
+                                        <option>未批先建</option>
+                                        <option>超出防治责任范围</option>
+                                        <option>建设地点变更</option></select>
+                                </div>
+                                <div class="layui-input-inline layui-show-xs-block">
+                                    <select name="contrller">
+                                        <option value="">是否针对监管</option>
+                                        <option value="0">是</option>
+                                        <option value="1">否</option></select>
+                                </div>
+                                <div class="layui-input-inline layui-show-xs-block">
+                                    <select name="contrller">
+                                        <option value="">复核状态</option>
+                                        <option value="0">已复核</option>
+                                        <option value="1">未复核</option></select>
+                                </div>
+                                
+                                <div class="layui-input-inline layui-show-xs-block">
+                                    <button class="layui-btn" lay-submit="" lay-filter="sreach">
+                                        <i class="layui-icon">&#xe615;</i></button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="layui-card-header">
+                            <button class="layui-btn layui-btn-primary layui-btn-sm" onclick="xadmin.open('添加数据','./order-add.html',800,600)">
+                                <i class="layui-icon"></i>添加</button>
+                            <button class="layui-btn layui-btn-primary layui-btn-sm" onclick="xadmin.open('修改数据','./order-add.html',800,600)">
+                                <i class="iconfont iconmd-create"></i>修改</button>
+                            <button class="layui-btn layui-btn-primary layui-btn-sm" onclick="delAll()">
+                                <i class="layui-icon"></i>批量删除</button>
+                            <button class="layui-btn layui-btn-primary layui-btn-sm" onclick="delAll()">天地一体化</button>
+                            <button class="layui-btn layui-btn-primary layui-btn-sm" onclick="delAll()">监管信息</button>
+                            <button class="layui-btn layui-btn-primary layui-btn-sm" onclick="delAll()">整改意见</button>
+                            <button class="layui-btn layui-btn-primary layui-btn-sm" onclick="delAll()">监督执法</button>
+                            <button class="layui-btn layui-btn-primary layui-btn-sm" onclick="delAll()">附件管理</button>
+                            <button class="layui-btn layui-btn-primary layui-btn-sm" onclick="delAll()">成果表管理</button>
+                        </div>
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    
+	
+
+</html>

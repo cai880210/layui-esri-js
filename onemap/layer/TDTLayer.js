@@ -1,7 +1,6 @@
 /**
- * hy.onemap.layer.TDTLayer
- * 调用天地图
- * @author  徐莹莹
+ * onemap.layer.TDTLayer
+ * 调用天地
  * @createDate : 2017-02-28
  * @classDescription : 地图
  */

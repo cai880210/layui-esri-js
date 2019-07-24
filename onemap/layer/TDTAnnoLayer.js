@@ -1,7 +1,6 @@
 /**
- * hy.onemap.layer.TDTAnnoLayer
+ * onemap.layer.TDTAnnoLayer
  * 调用天地图
- * @author  徐莹莹
  * @createDate : 2017-02-28
  * @classDescription : 地图
  */
